@@ -42,12 +42,12 @@ public class GroceryItemViewAdapter extends RecyclerView.Adapter<GroceryItemView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        holder.mGroceryTitle.setText(mGroceryList.get(position));
+    public void onBindViewHolder(@NonNull ViewHolder holder, int i) {
+        holder.mGroceryTitle.setText(mGroceryList.get(i));
         holder.mItemClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                removeGroceryItem(position);
+                removeGroceryItem(i);
             }
         });
     }
