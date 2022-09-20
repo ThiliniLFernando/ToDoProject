@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/popup_group"
+        android:menuCategory="container">
+        <item
+            android:id="@+id/popup_showItems"
+            android:icon="@drawable/ic_check_24dp"
+            android:title="@string/popup_complete" />
+        <item
+            android:id="@+id/popup_edit"
+            android:icon="@drawable/ic_edit_black_24dp"
+            android:title="@string/popup_edit" />
+
+        <item
+            android:id="@+id/popup_delete"
+            android:icon="@drawable/ic_delete_black_24dp"
+            android:title="@string/popup_remove" />
+    </group>
+</menu>

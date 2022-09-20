@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/pro_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/profile_backgroud_grad_default"
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp">
+
+        <RelativeLayout
+            android:id="@+id/img_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/profile_circle">
+
+            <ImageView
+                android:id="@+id/profileView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="9dp"
+                android:adjustViewBounds="true"
+                android:padding="3dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_user_circle" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/profile_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_view"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif"
+            android:text="Thilini Fernando"
+            android:textColor="@color/textColor_white"
+            android:textSize="32dp" />
+
+        <TextView
+            android:id="@+id/profile_user_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_user_name"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif"
+            android:text="thilinilakshani729@gmail.com"
+            android:textColor="@color/textColor_white"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

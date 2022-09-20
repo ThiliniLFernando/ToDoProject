@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/new_list_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/colorAccent"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/add_invitation_title"
+        android:textColor="@color/new_list_title_textColor"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hashcode_eventTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="5dp"
+            android:text="@string/hashcode_eventTitle"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/hashcode_dueDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="5dp"
+            android:text="@string/hashcode_dueDate"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/hashcode_startTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="5dp"
+            android:text="@string/hashcode_startTime"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/hashcode_endTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="5dp"
+            android:text="@string/hashcode_endTime"
+            android:textColor="@color/colorPrimaryDark" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hashcode_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="5dp"
+            android:text="@string/hashcode_location"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/hashcode_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="5dp"
+            android:text="@string/hashcode_note"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/hashcode_invitee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="5dp"
+            android:text="@string/hashcode_invitee"
+            android:textColor="@color/colorPrimaryDark" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:ems="10"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:background="@drawable/edittext_border"/>
+
+</LinearLayout>

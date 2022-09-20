@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_task"
+        android:enabled="true"
+        android:icon="@drawable/ic_tasks"
+        android:title="@string/menu_tasks"/>
+
+    <item
+        android:id="@+id/page_calendar"
+        android:enabled="true"
+        android:icon="@drawable/ic_calendar_1"
+        android:title="@string/menu_calender"/>
+
+    <item
+        android:id="@+id/page_list"
+        android:enabled="true"
+        android:icon="@drawable/ic_list"
+        android:title="@string/menu_lists"/>
+
+    <item
+        android:id="@+id/page_location"
+        android:enabled="true"
+        android:icon="@drawable/ic_location_20dp"
+        android:title="@string/menu_location"/>
+
+    <item
+        android:id="@+id/page_setting"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/menu_settings"/>
+</menu>

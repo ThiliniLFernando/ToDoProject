@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/backgroundDefaultColor"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/te_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:backgroundTintMode="screen"
+        android:elevation="4dp"
+        android:paddingEnd="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/te_new_task_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:ems="10"
+            android:hint="@string/task_editor_hint_task_name"
+            android:inputType="textPersonName"
+            android:minHeight="@dimen/editor_textView_minHeight"
+            android:textSize="20sp"
+            android:selectAllOnFocus="false"/>
+
+        <View
+            android:id="@+id/te_divider5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:id="@+id/te_list_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_list"
+            android:drawablePadding="3dp"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:hint="@string/task_editor_hint_list"
+            android:minHeight="@dimen/editor_textView_minHeight"
+            android:textSize="@dimen/editor_textSize" />
+
+        <View
+            android:id="@+id/te_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/te_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_calendar_18dp"
+                android:drawablePadding="3dp"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="@string/task_editor_hint_date"
+                android:minHeight="@dimen/editor_textView_minHeight"
+                android:textSize="@dimen/editor_textSize" />
+
+            <ImageButton
+                android:id="@+id/remove_date"
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:backgroundTintMode="screen"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/ic_close" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/te_divider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:id="@+id/hiddenLinear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/te_time_linear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/te_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_clock"
+                    android:drawablePadding="3dp"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:hint="@string/task_editor_hint_time"
+                    android:minHeight="@dimen/editor_textView_minHeight"
+                    android:textSize="@dimen/editor_textSize" />
+
+                <ImageButton
+                    android:id="@+id/remove_time"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:backgroundTintMode="screen"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_close" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/te_divider12"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="?android:attr/listDivider" />
+
+            <LinearLayout
+                android:id="@+id/te_remindMe_linear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/te_reminder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_alarm"
+                    android:drawablePadding="3dp"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:hint="@string/task_editor_hint_reminder"
+                    android:minHeight="@dimen/editor_textView_minHeight"
+                    android:textSize="@dimen/editor_textSize" />
+
+                <ImageButton
+                    android:id="@+id/remove_remind"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:backgroundTintMode="screen"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_close" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/te_divider13"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="?android:attr/listDivider" />
+
+            <LinearLayout
+                android:id="@+id/te_repeatLinear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/te_repeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_repeat"
+                    android:drawablePadding="3dp"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:hint="@string/task_editor_hint_repeat"
+                    android:minHeight="@dimen/editor_textView_minHeight"
+                    android:textSize="@dimen/editor_textSize" />
+
+                <ImageButton
+                    android:id="@+id/remove_repeat"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:backgroundTintMode="screen"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_close" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/te_divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="?android:attr/listDivider" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/te_priority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_priority"
+                android:drawablePadding="3dp"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="@string/task_editor_hint_priority"
+                android:minHeight="@dimen/editor_textView_minHeight"
+                android:textSize="@dimen/editor_textSize" />
+
+            <ImageButton
+                android:id="@+id/remove_priority"
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:backgroundTintMode="screen"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/ic_close" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/te_divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="?android:attr/listDivider" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

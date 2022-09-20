@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/backgroundDefaultColor">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+<!--        <FrameLayout-->
+<!--            android:id="@+id/calendarChangeableEvent"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:backgroundTintMode="screen">-->
+<!--        </FrameLayout>-->
+
+        <sun.bob.mcalendarview.views.ExpCalendarView
+            android:id="@+id/calenderEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="screen"
+            tools:context=".Main" />
+
+        <View
+            android:id="@+id/calendarDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <FrameLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dynamic_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="50dp"
+        app:fab_addButtonSize="normal"
+        app:fab_labelsPosition="left"
+        app:fab_addButtonColorNormal="@color/floatingActionButtonColor"
+        app:fab_labelStyle="@drawable/submenu_fab_title_background">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_submenu_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_icon="@drawable/ic_fab_event_color_icon"
+            app:fab_title="@string/fab_submenu_event_text"
+            android:backgroundTintMode="screen"
+            app:fab_size="mini"
+            app:fab_colorNormal="@color/backgroundDefaultColor"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_submenu_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_icon="@drawable/ic_fab_reminder_color_icon"
+            app:fab_title="@string/fab_submenu_reminder_text"
+            android:backgroundTintMode="screen"
+            app:fab_size="mini"
+            app:fab_colorNormal="@color/backgroundDefaultColor"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,230 @@
+<resources>
+    <string name="Google_API_Key">AIzaSyAH2qkVpH_ke5g5mVQ8sC6y1FYaEqiay6k</string>
+
+    <string name="app_name">Planner</string>
+    <string name="image_not_available">Image not available</string>
+    <string name="button_save_text">Save</string>
+    <string name="editor_menuSaveEvent">SAVE EVENT</string>
+    <string name="editor_menuUpdateEvent">UPDATE EVENT</string>
+    <string name="editor_menuRemoveEvent">REMOVE EVENT</string>
+    <string name="editor_menuSaveTask">SAVE TASK</string>
+
+    <!--    List Popup Menu Item   -->
+    <string name="popup_edit">Edit</string>
+    <string name="popup_remove">Remove</string>
+    <string name="popup_show">Show</string>
+    <string name="popup_complete">Complete</string>
+    <string name="popup_incomplete">Not Complete</string>
+
+    <!--    Task Editor    -->
+    <string name="task_editor_hint_task_name">I want to do...</string>
+    <string name="task_editor_hint_list">List</string>
+    <string name="task_editor_hint_priority">Priority</string>
+    <string name="task_editor_hint_date">Date</string>
+    <string name="task_editor_hint_time">No Time</string>
+    <string name="task_editor_hint_reminder">No Reminder</string>
+    <string name="task_editor_hint_repeat">No Repeat</string>
+
+    <!--    Event Editor   -->
+    <string name="event_editor_title">Title</string>
+    <string name="event_editor_date">Due Date</string>
+    <string name="event_editor_start_time">Start Time</string>
+    <string name="event_editor_end_time">End Time</string>
+    <string name="event_editor_start_time_edit">08:00 AM</string>
+    <string name="event_editor_end_time_edit">10:00 AM</string>
+    <string name="event_editor_all_day">All day</string>
+    <string name="event_editor_location">Location</string>
+    <string name="event_editor_invitees">Invitees</string>
+    <string name="event_editor_invitation">Invitation</string>
+    <string name="event_editor_note">Note</string>
+    <string name="event_editor_remindMe">Remind Me </string>
+    <string name="event_editor_attachments">Attachments</string>
+
+    <!--    Color Picker    -->
+    <string name="color_picker_text_sky">Sky</string>
+    <string name="color_picker_text_default">Default color</string>
+    <string name="color_picker_text_banana">Banana</string>
+    <string name="color_picker_text_grapes">Grape</string>
+    <string name="color_picker_text_mint">Mint</string>
+    <string name="color_picker_text_chili">Chili</string>
+    <string name="color_picker_text_punch">Punch</string>
+    <string name="color_picker_text_lemon">Lemon</string>
+
+    <!--    Navigation Drawer   -->
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+
+    <!--    Splash Screen   -->
+    <string name="splash_screen_preparing">Preparing...</string>
+    <string name="sign_in_splash_wait">Please Wait...</string>
+
+    <!--    Sign In Activity    -->
+    <string name="sign_in_label">Sign In</string>
+    <string name="sign_in_signInButton">Sign In</string>
+    <string name="sign_in_forgotPassword">Forgot Password ?</string>
+    <string name="sign_in_createNewAccountButton">Sign Up</string>
+    <string name="sign_in_havAccMsg">Do not Have an Account ? </string>
+    <string name="sign_in_skipSIgnIn_label">Skip</string>
+    <string name="forgot_pw_label">Forgot Password</string>
+    <string name="send_email">Send Reset Email</string>
+
+    <!--    Sign Up Activity    -->
+    <string name="sign_up_label">Sign Up</string>
+    <string name="sign_up_signUpButton">Sign Up</string>
+    <string name="sign_up_IHaveAnAccount">I have an account</string>
+
+    <!-- New Task : Reminder button colors  -->
+    <string name="navHeader_button">Sign in or Sign up</string>
+
+    <!--    Navigation Menu   -->
+    <string name="name_hint">Your Name</string>
+    <string name="email_hint">Email Address</string>
+    <string name="pw_hint">Password</string>
+    <string name="retypePw_hint">Retype password</string>
+    <string name="menu_tasks">Task</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_calender">Calender</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_reports">REPORTS</string>
+    <string name="menu_add_list">Add List</string>
+    <string name="menu_lists">List</string>
+    <string name="menu_location">Location</string>
+    <string name="menu_logout">Log Out</string>
+
+    <!-- New Task : Repeat Method Values   -->
+    <string name="alert_priority_title">Priority</string>
+
+    <!-- Priority List Values  -->
+    <string name="alert_reminder_title">Reminder</string>
+    <string name="positive_button">Add</string>
+
+    <!-- Remind Me List Values  -->
+    <string name="positive_button_ok">Ok</string>
+    <string name="negative_button">Cancel</string>
+
+    <!-- Alert Dialog Buttons  -->
+    <string name="add_new_list_title">Add List</string>
+    <string name="new_list_update_button">Update</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Add new list Dialog   -->
+    <string name="enter_list_name">Enter list name</string>
+    <string name="select_list_color">Select list color</string>
+    <string name="list_color">List Color</string>
+    <string name="addNote_title">Note</string>
+    <string name="addNote_text_hint">Add Note</string>
+    <string name="addNote_add">Add</string>
+
+    <!-- Add new invitee dialog   -->
+    <string name="enter_invitee_name">Invitee Name</string>
+    <string name="enter_invitee_number">Contact Number</string>
+
+    <!--    Add Note Dialog   -->
+    <string name="addNote_cancel">Cancel</string>
+    <string name="setting_changeProfile">Change Profile</string>
+    <string name="setting_changePassword">Change Password</string>
+    <string name="setting_changeUserName">Change User Name</string>
+
+    !-- Add Note Dialog -->
+    <string name="add_invitation_title">Invitation</string>
+
+    <!--    Setting Fragment   -->
+    <string name="fragTasks_emptyMessage">No task here... time to relax</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="fab_submenu_event_text">Event</string>
+
+    <!-- Setting Fragment Arrays -->
+    <string name="fab_submenu_reminder_text">Reminder</string>
+
+    <!-- Do not change this values -->
+    <string name="bottom_task_remind_me_label">REMIND ME ABOUT THIS</string>
+
+    <!--   Fragment Tasks   -->
+    <string name="pref_category_account">Account</string>
+    <string name="pref_category_notification">Notification</string>
+    <string name="ProfileScreen_changePictureButton">Change Profile Picture</string>
+    <string name="dialog_reset_password_title">Reset Password</string>
+
+    <!--   Bottom Sheet Task View   -->
+    <string name="dialog_reset_pw_reset_button">Reset</string>
+
+    <!--   Setting Preference Activity   -->
+    <string name="reset_pw_cancel_btn">Cancel</string>
+    <string name="menu_location_reminder">Location Reminder</string>
+    <string name="fab_submenu_all_reminder">All Reminders</string>
+    <string name="fab_submenu_supermarket_text">Nearby Supermarket</string>
+    <string name="fab_submenu_pharmacy_text">Nearby Pharmacy</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+
+    <string name="hashcode_eventTitle">#title_</string>
+    <string name="hashcode_startTime">#startAt_</string>
+    <string name="hashcode_endTime">#endAt_</string>
+    <string name="hashcode_dueDate">#date_</string>
+    <string name="hashcode_location">#loc_</string>
+    <string name="hashcode_note">#note_</string>
+    <string name="hashcode_invitee">#invitee_</string>
+    <string name="popup_done">Done ?</string>
+    <string name="popup_cancelled">Cancelled ?</string>
+    <string name="event_remove_title">Remove Event</string>
+    <string name="event_remove_message">Do you want to remove this event ?</string>
+    <string name="channel_name">Thilini</string>
+    <string name="channel_description">Hi</string>
+
+    <string-array name="it_opt">
+        <item>1 hr early</item>
+        <item>6 hr early</item>
+        <item>1 day early</item>
+        <item>30 day early</item>
+    </string-array>
+
+    <string-array name="repeat_method_spinner">
+        <item>Never</item>
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Yearly</item>
+    </string-array>
+    <string-array name="priority_list">
+        <item>High</item>
+        <item>Medium</item>
+        <item>Low</item>
+        <item>None</item>
+    </string-array>
+
+    <!--   Fragment Location Reminder [ Google Map]   -->
+    <string-array name="reminder_list">
+        <item>None</item> <!-- 0  -->
+        <item>On Time</item> <!-- 1  -->
+        <item>5 mins early</item> <!-- 2  -->
+        <item>30 mins early</item> <!-- 3  -->
+        <item>1 hr early</item> <!-- 4  -->
+        <item>1 day early</item> <!-- 5  -->
+    </string-array>
+
+    <string-array name="reminder_list_1">
+        <item>On Time</item> <!-- 1  -->
+        <item>5 mins early</item> <!-- 2  -->
+        <item>30 mins early</item> <!-- 3  -->
+        <item>1 hr early</item> <!-- 4  -->
+        <item>1 day early</item> <!-- 5  -->
+    </string-array>
+
+    <string-array name="custom_calendar_dropdown">
+        <item>Monthly</item> <!-- 1  -->
+        <item>Weekly</item> <!-- 2  -->
+        <item>3 Days</item> <!-- 3  -->
+        <item>A Day</item> <!-- 4  -->
+    </string-array>
+
+    <string-array name="pref_change_image_list_titles">
+        <item>Take a Photo</item>
+        <item>Choose from Gallery</item>
+    </string-array>
+    <string-array name="pref_change_image_list_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="ACCOUNT">
+    <Preference
+        android:key="reset_profile"
+        android:icon="@drawable/pref_change_profile"
+        android:title="Change Picture"/>
+    <EditTextPreference
+        android:key="reset_name"
+        android:icon="@drawable/pref_change_name"
+        android:title="Change Name"
+        android:dialogTitle="Please enter your name"/>
+    <Preference
+        android:key="reset_pw"
+        android:icon="@drawable/pref_change_pw"
+        android:title="Reset Password"/>
+    <Preference
+        android:key="delete_account"
+        android:icon="@drawable/pref_delete_account"
+        android:title="Delete Account"/>
+    <Preference
+        android:key="sign_out"
+        android:icon="@drawable/pref_sign_out"
+        android:title="Sign Out"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="PREFERENCES">
+
+        <Preference
+            android:key="theme"
+            android:icon="@drawable/pref_sign_out"
+            android:title="Theme"/>
+
+        <Preference
+            android:key="notification"
+            android:icon="@drawable/pref_sign_out"
+            android:title="Notification Sound"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2962ff</color>
+    <color name="colorAccent">#517FFF</color>
+    <color name="colorAccentBackground">#EEEEF1</color>
+    <color name="colorPrimaryDark">#0039cb</color>
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="primaryButtonColor">#0039cb</color>
+
+    <!--    Default   -->
+    <color name="button_foregroundColor1">#ffffff</color>
+    <color name="floatingActionButtonColor">#768fff</color>
+    <color name="googleMapFabColor">#FFFFFF</color>
+    <color name="googleMap_supermarketIconColor">#4CAF50</color>
+    <color name="googleMap_pharmacyIconColor">#FB8C00</color>
+    <color name="editTextBackgroundColor">#dbecf7</color>
+    <color name="toolbarColor">#f6f6f6</color>
+
+    <color name="navigationDrawerHeaderColor">#0a00b6</color>
+    <color name="buttonTextColor">#ffffff</color>
+    <color name="backgroundDefaultColor">#ffffff</color>
+    <color name="color_picker_layout_shapeColor">#dedede</color>
+    <color name="simple_button_color_1">#0039cb</color>
+    <color name="list_cardView_color">#ffffff</color>
+
+    <color name="dashed_line_theme">#a4a4a4</color>
+
+    <!-- Charts Colors -->
+    <color name="pieChart_completed">#e91e63</color>
+    <color name="pieChart_undone">#dedede</color>
+    <color name="weeklyBarChartColor">#00cdac</color>
+
+    <!-- Add Location Reminder Bottom Sheet  -->
+    <color name="locationReminder_addListItem">#1E88E5</color>
+    <color name="locationReminder_textView">#EDE9E9</color>
+
+    <!--    Fragment Calendar     -->
+    <color name="calendar_selectorColor">#7f7f7f</color>
+    <color name="calendar_selectedDateTextColor">#ffffff</color>
+
+    <!--    Fragment List     -->
+    <color name="list_item_count_text_backgroundColor">#e1e2e6</color>
+    <color name="fragment_list_fab">#e91e63</color>
+
+    <!--    Color Picker Colors 6EB5FF     -->
+    <color name="color_picker_default">#dedede</color>
+    <color name="color_picker_aqua">#00ffff</color>
+    <color name="color_picker_sky">#85E3FF</color>
+    <color name="color_picker_cornFlowerBlue">#6495ed</color>
+
+    <color name="color_picker_lemon">#EFFD5F</color>
+    <color name="color_picker_banana">#FCE205</color>
+    <color name="color_picker_orange">#ffa500</color>
+    <color name="color_picker_chili">#C21807</color>
+
+    <color name="color_picker_mistyRose">#ffe4e1</color>
+    <color name="color_picker_peachPuff">#ffdab9</color>
+    <color name="color_picker_LightPink">#ffb6c1</color>
+    <color name="color_picker_punch">#EC5578</color>
+
+    <color name="color_picker_lavender">#e6e6fa</color>
+    <color name="color_picker_LightSteelBlue">#b0c4de</color>
+    <color name="color_picker_Plum">#dda0dd</color>
+    <color name="color_picker_grapes">#A79AFF</color>
+
+    <color name="color_picker_mint">#98FB98</color>
+    <color name="color_picker_springGreen">#00ff7f</color>
+    <color name="color_picker_greenYellow">#adff2f</color>
+    <color name="color_picker_lime">#00ff00</color>
+
+    <!--    Sign In Activity    -->
+    <color name="sign_in_labelColor">#6200ea</color>
+    <color name="sign_in_buttonColor">#6200ea</color>
+    <color name="sign_in_buttonCreateNewAccounts">#ffe658</color>
+    <color name="signIn_backgroundColor">#f0f0f0</color>
+    <color name="signIn_viewBackgroundColor">#ffffff</color>
+    <color name="gray_bg">#dedede</color>
+
+    <!--    Sign Up Activity   -->
+    <color name="sign_up_labelColor">#6200ea</color>
+    <color name="sign_up_buttonColor">#6200ea</color>
+    <color name="sign_up_IHaveAnAccountColor">#6200ea</color>
+    <color name="signUp_backgroundColor">#f0f0f0</color>
+    <color name="signUp_viewBackgroundColor">#ffffff</color>
+
+    <!--    New Task Reminder Buttons   -->
+    <color name="newtask_buttons">#dedede</color>
+    <color name="newTask_layoutColor">#ffffff</color>
+
+    <!--    Task Editor  -->
+    <color name="taskEditor_backgroundColor">#ffffff</color>
+    <color name="taskEditor_removeBtnColor">#ff5c5c</color>
+
+    <!--    Nav Header    -->
+    <color name="nav_header_buttonColor">#A5DEF1</color>
+
+    <!--    New List Dialog    -->
+    <color name="new_list_title_textColor">#ffffff</color>
+    <color name="new_list_layoutColor">#ffffff</color>
+    <color name="newList_editTextBackgroundColor">#f0f0f0</color>
+    <color name="list_dialog_title_default_gradStart">#005b9f</color>
+    <color name="list_dialog_title_default_gradEnd">#0288d1</color>
+    <color name="list_dialog_btn_default_gradStart">#89f7fe</color>
+    <color name="list_dialog_btn_default_gradEnd">#66a6ff</color>
+
+    <!--    List Item View     -->
+    <color name="list_item_view_backgroundColor">#ececec</color>
+    <color name="list_background_default_gradStart">#CFD9DF</color>
+    <color name="list_background_default_gradEnd">#E2EBF0</color>
+    <color name="textColor_listItem">#000000</color>
+
+    <!--    task item view    -->
+    <color name="task_item_view_backgroundColor">#ebebeb</color>
+
+    <!-- Profile UI Colours -->
+    <color name="profile_background_default_gradStart">#02aab0</color>
+    <color name="profile_background_default_gradEnd">#00cdac</color>
+    <color name="profile_solid_circle">#d6d6d6</color>
+
+    <color name="textColor_white">#ffffff</color>
+    <color name="actionBar_textColor_default">#67efc8</color>
+
+    <color name="pacific_blue">#0288d1</color>
+    <color name="aquamarine_blue">#9CAFC3F1</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="orange">#FFFFB74D</color>
+    <color name="purple">#97A2FF</color>
+    <color name="gray">#a4a4a4</color>
+    <color name="logoForgroundColor">#00FDF5</color>
+
+
+    <color name="done_button_color">#21A321</color>
+    <color name="cancelled_button_color">#BC164E</color>
+
+</resources>

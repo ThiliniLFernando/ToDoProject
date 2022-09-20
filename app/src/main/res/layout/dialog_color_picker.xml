@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/colors_table"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_row="3"
+    android:layout_column="4"
+    android:background="@drawable/color_picker_layout_shape"
+    android:padding="10dp">
+
+    <TableRow
+        android:id="@+id/colorRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/color_1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_default"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_aqua"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_sky"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_grapes"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_lemon"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/color_6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_banana"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_7"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_orange"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_8"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_chili"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_9"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_mistyRose"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_10"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_peachPuff"
+            app:srcCompat="@drawable/ic_paint_dot" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/color_11"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_LightPink"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_12"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_punch"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_13"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_lavender"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_14"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_LightSteelBlue"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_15"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_Plum"
+            app:srcCompat="@drawable/ic_paint_dot" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/color_16"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_grapes"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_17"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_mint"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_18"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_springGreen"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_19"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_greenYellow"
+            app:srcCompat="@drawable/ic_paint_dot" />
+
+        <ImageView
+            android:id="@+id/color_20"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:tint="@color/color_picker_lime"
+            app:srcCompat="@drawable/ic_paint_dot" />
+    </TableRow>
+
+</TableLayout>

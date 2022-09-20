@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingTop="15dp"
+            android:paddingLeft="95dp"
+            android:paddingRight="80dp"
+            android:paddingBottom="15dp"
+            android:text="Location Reminder"
+            android:textStyle="bold"
+            android:textSize="19sp" />
+
+        <TextView
+            android:id="@+id/cancel_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            android:drawableLeft="@drawable/ic_close"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="332dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <EditText
+            android:id="@+id/reminder_title"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/locationReminder_textView"
+            android:ems="10"
+            android:hint="What do you want to do ?"
+            android:inputType="textPersonName"
+            android:paddingLeft="5dp" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="TextView" />
+
+        <RelativeLayout
+            android:id="@+id/recycler_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/design_add_list_item"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/new_grocery"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingLeft="3dp" />
+
+            <Button
+                android:id="@+id/add_list_item"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_weight="0"
+                android:background="@color/locationReminder_addListItem"
+                android:drawableLeft="@drawable/ic_add"
+                android:drawablePadding="3dp"
+                android:gravity="fill"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="Add Grocery"
+                android:textAllCaps="true" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add_reminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Reminder"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
