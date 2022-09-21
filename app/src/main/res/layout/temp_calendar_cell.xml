@@ -30,8 +30,8 @@
         android:id="@+id/customCal_Recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="2dp"
         android:scrollbars="vertical"
-        android:visibility="visible"
-        android:layout_marginLeft="10dp"/>
+        android:visibility="visible" />
 
 </LinearLayout>

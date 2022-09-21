@@ -3,15 +3,16 @@ package com.smart.planner.Adapters;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,11 +20,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.MetadataChanges;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.smart.planner.Main;
 import com.smart.planner.POJOs.CustomCalCel;
+import com.smart.planner.POJOs.Event;
+import com.smart.planner.POJOs.Reminder;
 import com.smart.planner.R;
 
 import java.text.SimpleDateFormat;
@@ -97,9 +103,8 @@ public class CalendarCel_Week extends RecyclerView.Adapter<CalendarCel_Week.View
             holder.colorLinear.setOrientation(LinearLayout.HORIZONTAL);
             holder.cellDate.setText(cel.getText());
             holder.cellDate.setTextColor(Color.parseColor(cel.getColorCode()));
-            createCalendarEvents(holder, cel);
         } else if (cel.isFooterCel()) {
-            ArrayList<String> data = new ArrayList<>();
+            ArrayList<Reminder> data = new ArrayList<>();
             holder.recyclerView.setVisibility(View.VISIBLE);
             holder.colorLinear.setOrientation(LinearLayout.HORIZONTAL);
             holder.cellDate.setVisibility(View.GONE);
@@ -115,9 +120,18 @@ public class CalendarCel_Week extends RecyclerView.Adapter<CalendarCel_Week.View
         }
     }
 
-    private void createVerticalCalendarEvents(final CalendarCel_Week.ViewHolder holder, CustomCalCel cell, final int width,ArrayList<String> data) {
+    private void createVerticalCalendarEvents(final CalendarCel_Week.ViewHolder holder, CustomCalCel cell, final int width,ArrayList<Reminder> data) {
+        data.clear();
         try {
             Date startDate = format.parse(cell.getDate().toString() + "");
+            Calendar st = Calendar.getInstance();
+            st.setTime(startDate);
+            st.set(Calendar.DATE,st.get(Calendar.DATE)-1);
+            st.set(Calendar.HOUR, 23);
+            st.set(Calendar.MINUTE, 59);
+            st.set(Calendar.SECOND, 59);
+            st.set(Calendar.MILLISECOND, 59);
+            startDate = st.getTime();
             Date endDate = format.parse(cell.getDate().toString() + "");
             Calendar en = Calendar.getInstance();
             en.setTime(endDate);
@@ -126,24 +140,28 @@ public class CalendarCel_Week extends RecyclerView.Adapter<CalendarCel_Week.View
             en.set(Calendar.SECOND, 59);
             en.set(Calendar.MILLISECOND, 59);
             endDate = en.getTime();
+
             Query q = FirebaseFirestore.getInstance().collection("Users")
                     .document(Main.CURRENT_USER_KEY)
                     .collection("Tasks")
                     .whereGreaterThan("dueDate", startDate)
                     .whereLessThan("dueDate", endDate);
-            q.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            q.addSnapshotListener(new EventListener<QuerySnapshot>() {
                 @Override
-                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                    if (task.isSuccessful()) {
-                        List<DocumentSnapshot> list = task.getResult().getDocuments();
-                        if (list.size() > 0) {
-                            int i = 0;
-                            for (DocumentSnapshot snapshot : list) {
-                                com.smart.planner.POJOs.Task t = snapshot.toObject(com.smart.planner.POJOs.Task.class);
-                                data.add(t.getTaskName());
+                public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                    List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                    if (list.size() > 0) {
+                        int i = 0;
+                        for (DocumentSnapshot snapshot : list) {
+                            Reminder t = snapshot.toObject(Reminder.class);
+                            if (t.isEvent()){
+                                t = snapshot.toObject(Event.class);
+                            }else {
+                                t = snapshot.toObject(com.smart.planner.POJOs.Task.class);
                             }
-                            holder.adapter.notifyDataSetChanged();
+                            data.add(t);
                         }
+                        holder.adapter.notifyDataSetChanged();
                     }
                 }
             });
@@ -155,52 +173,5 @@ public class CalendarCel_Week extends RecyclerView.Adapter<CalendarCel_Week.View
     @Override
     public int getItemCount() {
         return cells.size();
-    }
-
-    private void createCalendarEvents(final CalendarCel_Week.ViewHolder holder, CustomCalCel cell) {
-        try {
-            Date startDate = format.parse(cell.getDate().toString() + "");
-            Date endDate = format.parse(cell.getDate().toString() + "");
-            Calendar en = Calendar.getInstance();
-            en.setTime(endDate);
-            en.set(Calendar.HOUR, 23);
-            en.set(Calendar.MINUTE, 59);
-            en.set(Calendar.SECOND, 59);
-            en.set(Calendar.MILLISECOND, 59);
-            endDate = en.getTime();
-            Query q = FirebaseFirestore.getInstance().collection("Users")
-                    .document(Main.CURRENT_USER_KEY)
-                    .collection("Tasks")
-                    .whereGreaterThan("dueDate", startDate)
-                    .whereLessThan("dueDate", endDate);
-            q.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                    if (task.isSuccessful()) {
-                        List<DocumentSnapshot> list = task.getResult().getDocuments();
-                        if (list.size() > 0) {
-                            int i = 0;
-                            for (DocumentSnapshot snapshot : list) {
-                                if (i <= 4) {
-                                    TextView tv = new TextView(mContext);
-                                    tv.setWidth(20);
-                                    tv.setHeight(20);
-
-                                    GradientDrawable gd = new GradientDrawable();
-                                    gd.setShape(GradientDrawable.OVAL);
-                                    gd.setColor(Color.parseColor(colorArray[i]));
-
-                                    tv.setBackground(gd);
-                                    holder.colorLinear.addView(tv);
-                                    i++;
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }

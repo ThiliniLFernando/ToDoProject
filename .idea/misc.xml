@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/drawable/bg_calendar_week_item.xml" value="0.117" />
+        <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/drawable/button_task_editor_save.xml" value="0.117" />
+        <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/drawable/color_picker_layout_shape.xml" value="0.117" />
+        <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/drawable/cycle_background.xml" value="0.117" />
         <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/layout/fragment_calendar.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/layout/fragment_calendar_3day.xml" value="0.13243243243243244" />

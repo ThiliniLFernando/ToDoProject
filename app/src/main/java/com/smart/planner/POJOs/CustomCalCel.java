@@ -1,5 +1,7 @@
 package com.smart.planner.POJOs;
 
+import androidx.annotation.NonNull;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -10,6 +12,7 @@ public class CustomCalCel {
     private boolean isBodyCel = false;
     private boolean isFooterCel = false;
     private LocalDate date = null;
+    private Task task;
     private String text = null;
     private String colorCode ;
     private ArrayList<String> event ;
@@ -34,6 +37,14 @@ public class CustomCalCel {
     public CustomCalCel setColorCode(String colorCode) {
         this.colorCode = colorCode;
         return this;
+    }
+
+    public Task getTask() {
+        return task;
+    }
+
+    public void setTask(Task task) {
+        this.task = task;
     }
 
     public String getText() {
@@ -99,5 +110,14 @@ public class CustomCalCel {
         return this;
     }
 
+    @NonNull
+    @Override
+    public CustomCalCel clone(){
+        try {
+            return (CustomCalCel) super.clone();
+        }catch(CloneNotSupportedException ex){
+            return null;
+        }
+    }
 }
 
