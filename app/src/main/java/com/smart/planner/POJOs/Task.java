@@ -1,35 +1,30 @@
 package com.smart.planner.POJOs;
 
-import androidx.annotation.NonNull;
-
-import com.google.firebase.firestore.Exclude;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Task extends Reminder implements Serializable,Cloneable {
-    private String documentId ;
+public class Task extends Reminder implements Serializable, Cloneable {
     private String reminderType;
     private String taskUniqueId;
     private String taskName;
     private String listName;
     private String priority;
-    private String repeatMethod ;
-    private boolean isCompleted ;
-    private Date dueDate ;
+    private String repeatMethod;
+    private boolean isCompleted;
+    private Date dueDate;
     private Date completeDate;
 
-    private ArrayList<Date> reminders ;
+    private ArrayList<Date> reminders;
 
-    public Task(){
+    public Task() {
         super(false);
     }
 
-    public Task(String taskName,String listName){
+    public Task(String taskName, String listName) {
         super(false);
-        this.taskName = taskName ;
-        this.listName = listName ;
+        this.taskName = taskName;
+        this.listName = listName;
     }
 
     @Override
@@ -43,11 +38,11 @@ public class Task extends Reminder implements Serializable,Cloneable {
     }
 
     public String getDocumentId() {
-        return documentId;
+        return super.getDocumentId();
     }
 
     public void setDocumentId(String documentId) {
-        this.documentId = documentId;
+        super.setDocumentId(documentId);
     }
 
     public String getReminderType() {
@@ -121,5 +116,13 @@ public class Task extends Reminder implements Serializable,Cloneable {
     @Override
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
+    }
+
+    public ArrayList<FocusTime> getFocusTimes() {
+        return super.getFocusTimes();
+    }
+
+    public void setFocusTimes(ArrayList<FocusTime> focusTimes) {
+        super.setFocusTimes(focusTimes);
     }
 }

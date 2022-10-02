@@ -1,9 +1,11 @@
 package com.smart.planner.POJOs;
-
-import com.google.firebase.firestore.Exclude;
+import java.util.ArrayList;
 
 public class Reminder {
+    private String documentId ;
     private boolean isEvent;
+    private ArrayList<FocusTime> focusTimes = new ArrayList<>();
+
     public Reminder(){}
 
     public Reminder(boolean answer){
@@ -16,5 +18,21 @@ public class Reminder {
 
     public void setEvent(boolean event) {
         isEvent = event;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }
+
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public ArrayList<FocusTime> getFocusTimes() {
+        return focusTimes;
+    }
+
+    public void setFocusTimes(ArrayList<FocusTime> focusTimes) {
+        this.focusTimes = focusTimes;
     }
 }

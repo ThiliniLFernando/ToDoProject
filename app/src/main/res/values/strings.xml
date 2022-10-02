@@ -214,8 +214,7 @@
     <string-array name="custom_calendar_dropdown">
         <item>Monthly</item> <!-- 1  -->
         <item>Weekly</item> <!-- 2  -->
-        <item>3 Days</item> <!-- 3  -->
-        <item>A Day</item> <!-- 4  -->
+        <item>A Day</item> <!-- 3  -->
     </string-array>
 
     <string-array name="pref_change_image_list_titles">

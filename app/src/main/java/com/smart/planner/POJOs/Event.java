@@ -1,13 +1,11 @@
 package com.smart.planner.POJOs;
 
 import androidx.annotation.NonNull;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Event extends Reminder implements Serializable,Cloneable {
-    private String documentId ;
     private String eventTitle;
     private Date dueDate;
     private Date startTime;
@@ -42,11 +40,11 @@ public class Event extends Reminder implements Serializable,Cloneable {
     }
 
     public String getDocumentId() {
-        return documentId;
+        return super.getDocumentId();
     }
 
     public void setDocumentId(String documentId) {
-        this.documentId = documentId;
+        super.setDocumentId(documentId);
     }
 
     public String getColorCode() {
@@ -157,6 +155,14 @@ public class Event extends Reminder implements Serializable,Cloneable {
     @Override
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();
+    }
+
+    public ArrayList<FocusTime> getFocusTimes() {
+        return super.getFocusTimes();
+    }
+
+    public void setFocusTimes(ArrayList<FocusTime> focusTimes) {
+        super.setFocusTimes(focusTimes);
     }
 }
 

@@ -29,12 +29,14 @@ public class DBUpdateTask extends AsyncTask<HashMap<String,Object>,Void,Void> {
             NotificationReminderDAO dao =
                     LocalDB.getInstance(context).notificationReminderDAO();
             ArrayList<Date> dates = (ArrayList<Date>) map.get("reminders");
-            for (Date date : dates){
-                dao.updateReminderByDocId(
-                        (String) map.get("documentId"),
-                        (String) map.get("taskName"),
-                        date.getTime(),
-                        "");
+            if (dates != null) {
+                for (Date date : dates) {
+                    dao.updateReminderByDocId(
+                            (String) map.get("documentId"),
+                            (String) map.get("taskName"),
+                            date.getTime(),
+                            "");
+                }
             }
         }
         return null;

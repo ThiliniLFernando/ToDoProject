@@ -29,19 +29,19 @@ import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class CustomCellLinearAdapter extends RecyclerView.Adapter<CustomCellLinearAdapter.ViewHolder> {
+public class CustomCellLinearAdapter_ADay extends RecyclerView.Adapter<CustomCellLinearAdapter_ADay.ViewHolder> {
 
-    private Context mContext;
     private Fragment calendarFragment;
+    private Context mContext;
     private ArrayList<Reminder> taskItems;
     private int width;
     private DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm a");
     private SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
 
-    public CustomCellLinearAdapter(Fragment calendarFragment, ArrayList<Reminder> mList, int width){
+    public CustomCellLinearAdapter_ADay(Fragment calendarFragment,ArrayList<Reminder> mList, int width){
         this.taskItems = mList;
         this.width = width;
-        this.calendarFragment=calendarFragment;
+        this.calendarFragment = calendarFragment;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -58,13 +58,12 @@ public class CustomCellLinearAdapter extends RecyclerView.Adapter<CustomCellLine
             cellTime = itemView.findViewById(R.id.task_time);
             linearLayout = itemView.findViewById(R.id.cons_layout);
         }
-
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.temp_customcal_linear_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.temp_customcal_linear_item_day, parent, false);
         mContext = view.getContext();
         return new ViewHolder(view);
     }
@@ -109,12 +108,10 @@ public class CustomCellLinearAdapter extends RecyclerView.Adapter<CustomCellLine
                 }
             });
         }
-        holder.cellData.setWidth(width);
     }
 
     @Override
     public int getItemCount() {
         return this.taskItems.size();
     }
-
 }

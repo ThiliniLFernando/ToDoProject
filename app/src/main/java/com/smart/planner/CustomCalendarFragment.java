@@ -73,24 +73,16 @@ public class CustomCalendarFragment extends Fragment {
                     case 1:
                         //weekly
                         selectedFragment = new FragmentCalendar_Week(CustomCalendarFragment.this,currentCalDate);
-                        //layoutManager = new GridLayoutManager(getContext(), 7, GridLayoutManager.HORIZONTAL, false);
                         break;
                     case 2:
-                        //3 day
-                        selectedFragment = new FragmentCalendar_3Day(CustomCalendarFragment.this,currentCalDate);
-                        //layoutManager = new GridLayoutManager(getContext(), 3, GridLayoutManager.HORIZONTAL, false);
-                        break;
-                    case 3:
                         // a day
                         selectedFragment = new FragmentCalendar_ADay(CustomCalendarFragment.this,currentCalDate);
-                        //layoutManager = new GridLayoutManager(getContext(), 1, GridLayoutManager.HORIZONTAL, false);
                         break;
                 }
                 getParentFragmentManager()
                         .beginTransaction()
                         .replace(R.id.calendarDynamicFrame, selectedFragment)
                         .commit();
-                //recyclerView.setLayoutManager(layoutManager);
             }
 
             @Override

@@ -66,7 +66,7 @@ public class FragmentCalendar_Week extends Fragment {
 
         cells = new ArrayList<>();
 
-        calendarViewAdapter = new CalendarCel_Week(cells, this, recyclerView, null, metrics.heightPixels, metrics.widthPixels, metrics.density);
+        calendarViewAdapter = new CalendarCel_Week(cells, this, recyclerView, metrics.heightPixels, metrics.widthPixels, metrics.density);
         recyclerView.setAdapter(calendarViewAdapter);
         layoutManager = new GridLayoutManager(getContext(), 7, GridLayoutManager.HORIZONTAL, false);
         recyclerView.setHasFixedSize(true);

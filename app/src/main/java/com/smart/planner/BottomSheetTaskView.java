@@ -348,6 +348,7 @@ public class BottomSheetTaskView extends BottomSheetDialogFragment {
                                             }
                                         })
                                         .show();
+                                dismiss();
                             } else {
                                 new DBUpdateTask(getContext()).execute(updated_task2);
                                 reference.update(updated_task2)
@@ -364,6 +365,7 @@ public class BottomSheetTaskView extends BottomSheetDialogFragment {
                                                 Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                                             }
                                         });
+                                dismiss();
                             }
                         }
                     }

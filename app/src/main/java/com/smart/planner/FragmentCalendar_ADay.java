@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.smart.planner.Adapters.CalendarCel;
+import com.smart.planner.Adapters.CalendarCel_ADay;
 import com.smart.planner.POJOs.CustomCalCel;
 
 import java.time.LocalDate;
@@ -30,7 +31,7 @@ public class FragmentCalendar_ADay extends Fragment {
     private GridLayoutManager layoutManager;
     private LocalDate currentCalDate;
     private ArrayList<CustomCalCel> cells;
-    private CalendarCel calendarViewAdapter;
+    private CalendarCel_ADay calendarViewAdapter;
     private CustomCalendarFragment fragment ;
 
     public FragmentCalendar_ADay(){}
@@ -64,7 +65,7 @@ public class FragmentCalendar_ADay extends Fragment {
 
         cells = new ArrayList<>();
 
-        calendarViewAdapter = new CalendarCel(cells, this, recyclerView, null, metrics.heightPixels, metrics.widthPixels, metrics.density);
+        calendarViewAdapter = new CalendarCel_ADay(cells, this, recyclerView,metrics.heightPixels, metrics.widthPixels, metrics.density);
         recyclerView.setAdapter(calendarViewAdapter);
         layoutManager = new GridLayoutManager(getContext(), 1, GridLayoutManager.HORIZONTAL, false);
         recyclerView.setHasFixedSize(true);
@@ -85,7 +86,7 @@ public class FragmentCalendar_ADay extends Fragment {
             public void onClick(View view) {
                 if (currentCalDate != null) {
                     layoutManager = new GridLayoutManager(getContext(), 1, GridLayoutManager.HORIZONTAL, false);
-                    currentCalDate = currentCalDate.plusDays(1);
+                    currentCalDate = currentCalDate.minusDays(1);
                     recyclerView.setLayoutManager(layoutManager);
                     displayParticularDay();
                 }
@@ -111,8 +112,14 @@ public class FragmentCalendar_ADay extends Fragment {
         year.setText(currentCalDate.getYear() + "");
         month.setText(currentCalDate.getMonth().name());
 
-        cells.add(new CustomCalCel(currentCalDate.getDayOfWeek().name().substring(0, 3)).setIsAHeadCel(true).setHasRandomHeight(false));
-        cells.add(new CustomCalCel(currentCalDate.getDayOfMonth() + "").setDate(currentCalDate).setIsABodyCel(true).setColorCode("#000000"));
+        cells.add(new CustomCalCel(
+                currentCalDate.getDayOfWeek().name().substring(0, 3)+" \n"+" \n "+currentCalDate.getDayOfMonth())
+                        .setIsAHeadCel(true)
+                        .setHasRandomHeight(false));
+        cells.add(new CustomCalCel(
+                currentCalDate.getDayOfMonth() + "")
+                .setDate(currentCalDate)
+                .setIsAFooterCel(true));
 
         this.fragment.currentCalDate = currentCalDate;
         calendarViewAdapter.notifyDataSetChanged();

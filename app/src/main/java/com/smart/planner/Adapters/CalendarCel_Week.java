@@ -50,7 +50,7 @@ public class CalendarCel_Week extends RecyclerView.Adapter<CalendarCel_Week.View
     private static int widthPixel;
     private int density;
 
-    public CalendarCel_Week(ArrayList<CustomCalCel> cells, Fragment fragment, RecyclerView calBody, Spinner calDropdown, int height, int width, float density) {
+    public CalendarCel_Week(ArrayList<CustomCalCel> cells, Fragment fragment, RecyclerView calBody, int height, int width, float density) {
         this.cells = cells;
         this.fragment = fragment;
         this.calBody = calBody;
@@ -108,7 +108,7 @@ public class CalendarCel_Week extends RecyclerView.Adapter<CalendarCel_Week.View
             holder.recyclerView.setVisibility(View.VISIBLE);
             holder.colorLinear.setOrientation(LinearLayout.HORIZONTAL);
             holder.cellDate.setVisibility(View.GONE);
-            holder.adapter = new CustomCellLinearAdapter(data,(CalendarCel_Week.widthPixel-400));
+            holder.adapter = new CustomCellLinearAdapter(fragment,data,(CalendarCel_Week.widthPixel-400));
             holder.recycleViewLayoutManager = new LinearLayoutManager(CalendarCel_Week.mContext);
             holder.recyclerView.setLayoutManager(holder.recycleViewLayoutManager);
             holder.recyclerView.setAdapter(holder.adapter);
@@ -121,7 +121,6 @@ public class CalendarCel_Week extends RecyclerView.Adapter<CalendarCel_Week.View
     }
 
     private void createVerticalCalendarEvents(final CalendarCel_Week.ViewHolder holder, CustomCalCel cell, final int width,ArrayList<Reminder> data) {
-        data.clear();
         try {
             Date startDate = format.parse(cell.getDate().toString() + "");
             Calendar st = Calendar.getInstance();
@@ -146,9 +145,10 @@ public class CalendarCel_Week extends RecyclerView.Adapter<CalendarCel_Week.View
                     .collection("Tasks")
                     .whereGreaterThan("dueDate", startDate)
                     .whereLessThan("dueDate", endDate);
-            q.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            q.addSnapshotListener(MetadataChanges.INCLUDE,new EventListener<QuerySnapshot>() {
                 @Override
                 public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                    data.clear();
                     List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
                     if (list.size() > 0) {
                         int i = 0;
@@ -159,10 +159,11 @@ public class CalendarCel_Week extends RecyclerView.Adapter<CalendarCel_Week.View
                             }else {
                                 t = snapshot.toObject(com.smart.planner.POJOs.Task.class);
                             }
+                            t.setDocumentId(snapshot.getId());
                             data.add(t);
                         }
-                        holder.adapter.notifyDataSetChanged();
                     }
+                    holder.adapter.notifyDataSetChanged();
                 }
             });
         } catch (Exception e) {
