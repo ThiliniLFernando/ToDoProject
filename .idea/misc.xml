@@ -17,6 +17,7 @@
         <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/layout/fragment_calendar_month.xml" value="0.13243243243243244" />
         <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/layout/fragment_calendar_week.xml" value="0.13243243243243244" />
         <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/layout/fragment_customcalendar.xml" value="0.13243243243243244" />
+        <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/layout/fragment_reports.xml" value="0.18" />
         <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/layout/fragment_tasks.xml" value="0.1293918918918919" />
         <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/layout/temp_attachment_item.xml" value="0.1293918918918919" />
         <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/layout/temp_calendar_cell.xml" value="0.1293918918918919" />
@@ -25,6 +26,7 @@
         <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/layout/temp_customcal_linear_item_day.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/layout/temp_location_reminder_item.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/layout/template_calendar_week_item.xml" value="0.1293918918918919" />
+        <entry key="..\:/AndroidStudioProjects/TodoProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1195" />
       </map>
     </option>
   </component>

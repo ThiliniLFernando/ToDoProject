@@ -26,8 +26,8 @@
     <color name="dashed_line_theme">#a4a4a4</color>
 
     <!-- Charts Colors -->
-    <color name="pieChart_completed">#e91e63</color>
-    <color name="pieChart_undone">#dedede</color>
+    <color name="pieChart_completed">#768fff</color>
+    <color name="pieChart_undone">#ffb6c1</color>
     <color name="weeklyBarChartColor">#00cdac</color>
 
     <!-- Add Location Reminder Bottom Sheet  -->
