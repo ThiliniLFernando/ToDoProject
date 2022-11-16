@@ -3,19 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item
-        android:id="@+id/nav_add_list"
-        android:icon="@drawable/ic_add"
-        android:title="@string/menu_add_list" />
-
     <group
         android:id="@+id/group2"
         android:checkableBehavior="single">
-
-        <item
-            android:id="@+id/nav_report"
-            android:icon="@drawable/ic_reports"
-            android:title="@string/menu_reports" />
 
         <item
             android:id="@+id/nav_logout"

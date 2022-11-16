@@ -123,6 +123,7 @@ public class TaskViewSection extends StatelessSection {
         final TaskViewHolder itemHolder = (TaskViewHolder) holder;
         Reminder re = this.itemList.get(position);
         if (!re.isEvent()) {
+            itemHolder.complete.setVisibility(View.VISIBLE);
             itemHolder.eventDash.setVisibility(View.GONE);
             itemHolder.eventEndTime.setVisibility(View.GONE);
             itemHolder.eventNote.setVisibility(View.GONE);
@@ -134,7 +135,7 @@ public class TaskViewSection extends StatelessSection {
             itemHolder.done.setVisibility(View.GONE);
             itemHolder.cancelled.setVisibility(View.GONE);
             itemHolder.eventStartTime.setCompoundDrawables(null,null,null,null);
-
+            itemHolder.eventTitle.setTextColor(Color.BLACK);
             final Task task = (Task) this.itemList.get(position);
             itemHolder.eventStartTime.setText(timeFormat.format(task.getDueDate()));
             itemHolder.taskDate.setText(dateFormat.format(task.getDueDate()));
@@ -182,6 +183,16 @@ public class TaskViewSection extends StatelessSection {
         }else{
             itemHolder.l2.setVisibility(View.GONE);
             itemHolder.complete.setVisibility(View.GONE);
+
+            itemHolder.eventDash.setVisibility(View.VISIBLE);
+            itemHolder.eventEndTime.setVisibility(View.VISIBLE);
+            itemHolder.eventNote.setVisibility(View.VISIBLE);
+            itemHolder.eventLoc.setVisibility(View.VISIBLE);
+            itemHolder.eventIcon.setVisibility(View.VISIBLE);
+            itemHolder.inviteeCount.setVisibility(View.VISIBLE);
+            itemHolder.eventDate.setVisibility(View.VISIBLE);
+            itemHolder.done.setVisibility(View.VISIBLE);
+            itemHolder.cancelled.setVisibility(View.VISIBLE);
 
             final Event event = (Event) this.itemList.get(position);
             int darkColor = ColorUtils.blendARGB(Color.parseColor(event.getColorCode()),Color.BLACK,0.4f);

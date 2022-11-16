@@ -113,17 +113,59 @@
 
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/textView21"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:paddingLeft="15dp"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
-        android:text="Weekly Statistics"
-        android:textSize="15sp"
-        android:textStyle="bold|italic" />
+        android:orientation="horizontal"
+        android:layout_gravity="right">
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="Weekly"
+            android:textSize="15sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/backward_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+
+            <TextView
+                android:id="@+id/week_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:text="14/11/22 - 20/11/22"
+                android:textSize="15sp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/forward_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:id="@+id/weekly_page_viewer"

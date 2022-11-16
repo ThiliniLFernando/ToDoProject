@@ -89,9 +89,8 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
     private TextView user_name, user_email;
     private ImageView user_profile;
     private RelativeLayout fragmentContainer;
-    private BottomNavigationView bottomNav ;
-    private MaterialCardView addList,viewReports;
-    private Button logOut;
+    private BottomNavigationView bottomNav;
+    private MaterialCardView addList, viewSettings;
 
     private Fragment selectedFragment = null;
     private FirebaseFirestore firestore;
@@ -115,7 +114,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
             selectedFragment = new FragmentTasks();
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
             getSupportActionBar().setTitle("Task");
-            navigationView.setCheckedItem(R.id.nav_report);
+            // navigationView.setCheckedItem(R.id.nav_settings);
         }
 
         // check app open first time or not
@@ -131,7 +130,6 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         }
 
 
-
     }
 
     private void setProfileImage() {
@@ -141,11 +139,11 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                 .into(user_profile);
     }
 
-    protected static void changeProfileSignature(){
-        profileSignature = Calendar.getInstance().getTimeInMillis()+"";
+    protected static void changeProfileSignature() {
+        profileSignature = Calendar.getInstance().getTimeInMillis() + "";
     }
 
-    protected static String getProfileSignature(){
+    protected static String getProfileSignature() {
         return profileSignature;
     }
 
@@ -161,30 +159,20 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         navigationView.setNavigationItemSelectedListener(this);
         fragmentContainer = findViewById(R.id.fragment_container);
         bottomNav = findViewById(R.id.bottom_navView);
-        profileSignature = Calendar.getInstance().getTimeInMillis()+"";
+        profileSignature = Calendar.getInstance().getTimeInMillis() + "";
 
         user_name = navigationView.getHeaderView(0).findViewById(R.id.user_name);
         user_email = navigationView.getHeaderView(0).findViewById(R.id.user_email);
         user_profile = navigationView.getHeaderView(0).findViewById(R.id.user_profile);
-        viewReports = navigationView.getHeaderView(0).findViewById(R.id.report_card);
+        viewSettings = navigationView.getHeaderView(0).findViewById(R.id.report_card);
         addList = navigationView.getHeaderView(0).findViewById(R.id.add_list_card);
-        logOut = navigationView.getHeaderView(0).findViewById(R.id.log_out);
 
         simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
 
-        viewReports.setOnClickListener(new View.OnClickListener() {
+        viewSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedFragment = new FragmentReports();
-                getSupportActionBar().setTitle("Reports");
-                if (selectedFragment != null) {
-                    getSupportFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.fragment_container, selectedFragment)
-                            .setCustomAnimations(R.anim.layout_translate_rtl_design, R.anim.layout_translate_ltr_design)
-                            .commit();
-                    drawerLayout.closeDrawer(GravityCompat.START);
-                }
+                startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
             }
         });
 
@@ -193,17 +181,6 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
             public void onClick(View view) {
                 DialogFragment newFragment = new DialogNewList();
                 newFragment.show(getSupportFragmentManager(), "new_list_dialog");
-                drawerLayout.closeDrawer(GravityCompat.START);
-            }
-        });
-
-        logOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                preferences.edit().clear().commit();
-                startActivity(new Intent(getApplicationContext(), SignIn.class));
-                finish();
                 drawerLayout.closeDrawer(GravityCompat.START);
             }
         });
@@ -218,7 +195,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         };
 
         storageRef = FirebaseStorage.getInstance().getReference();
-        profileReference = storageRef.child(CURRENT_USER_KEY +""+ PROFILE_PATH);
+        profileReference = storageRef.child(CURRENT_USER_KEY + "" + PROFILE_PATH);
 
         setUserInfoToNavViewHeader();
 
@@ -226,11 +203,11 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         // rewrite profile image file when Profile changed !
         firestore.collection("Users").document(CURRENT_USER_KEY)
                 .collection("profilePath").addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e) {
-                uploadProfileImageToStorage(Main.CURRENT_USER_KEY);
-            }
-        });
+                    @Override
+                    public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e) {
+                        uploadProfileImageToStorage(Main.CURRENT_USER_KEY);
+                    }
+                });
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
@@ -249,10 +226,26 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.nav_logout:
+                        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                        preferences.edit().clear().commit();
+                        startActivity(new Intent(getApplicationContext(), SignIn.class));
+                        finish();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                }
+                return true;
+            }
+        });
+
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.page_task:
                         selectedFragment = new FragmentTasks();
                         getSupportActionBar().setTitle("Task");
@@ -273,9 +266,9 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                         getSupportActionBar().setTitle("");
                         break;
 
-                    case R.id.page_setting:
-                        selectedFragment = new FragmentSetting();
-                        getSupportActionBar().setTitle("Setting");
+                    case R.id.page_reports:
+                        selectedFragment = new FragmentReports();
+                        getSupportActionBar().setTitle("Reports");
                         break;
 
                 }
@@ -295,18 +288,18 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
     }
 
-    public void startMinuteUpdater(){
+    public void startMinuteUpdater() {
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_TIME_TICK);
         minuteUpdater = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 counter++;
-                Toast.makeText(context, ""+counter, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "" + counter, Toast.LENGTH_SHORT).show();
             }
         };
 
-        registerReceiver(minuteUpdater,filter);
+        registerReceiver(minuteUpdater, filter);
     }
 
     private void setUserInfoToNavViewHeader() {
@@ -324,7 +317,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
     // Navigation Item Selected Method
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-            return true;
+        return true;
     }
 
     // toolbar menu setup
@@ -405,7 +398,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode,permissions,grantResults);
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case RequestCodes.ALL_PERMISSION_REQUEST_CODE: {
                 // When request is cancelled, the results array are empty
@@ -503,34 +496,34 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         //cancelHalfDayAlarm();
     }
 
-    public void cancelQuarterAlarm(){
+    public void cancelQuarterAlarm() {
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
-        Intent intent = new Intent(getApplicationContext(), QuarterAlarmReceiver.class) ;
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),QuarterAlarmReceiver.REQUEST_CODE,intent,0);
+        Intent intent = new Intent(getApplicationContext(), QuarterAlarmReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), QuarterAlarmReceiver.REQUEST_CODE, intent, 0);
 
         alarmManager.cancel(pendingIntent);
     }
 
-    public void scheduleQuarterAlarm(){
+    public void scheduleQuarterAlarm() {
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
-        Intent intent = new Intent(getApplicationContext(), QuarterAlarmReceiver.class) ;
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),QuarterAlarmReceiver.REQUEST_CODE,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent intent = new Intent(getApplicationContext(), QuarterAlarmReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), QuarterAlarmReceiver.REQUEST_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        Calendar now = Calendar.getInstance() ;
+        Calendar now = Calendar.getInstance();
         now.setTimeInMillis(System.currentTimeMillis());
 
         Calendar start = Calendar.getInstance();
-        start.set(Calendar.HOUR_OF_DAY,1);
-        start.set(Calendar.MINUTE,00);
-        start.set(Calendar.SECOND,00);
-        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,System.currentTimeMillis(),1000*60*60,pendingIntent);
+        start.set(Calendar.HOUR_OF_DAY, 1);
+        start.set(Calendar.MINUTE, 00);
+        start.set(Calendar.SECOND, 00);
+        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 1000 * 60 * 60, pendingIntent);
     }
 
     public void scheduleHalfNotificationChecker() {
         Intent intent = new Intent(getApplicationContext(), QuarterChecker.class);
-        intent.putExtra("DOC_KEY",CURRENT_USER_KEY);
+        intent.putExtra("DOC_KEY", CURRENT_USER_KEY);
         final PendingIntent pIntent = PendingIntent.getBroadcast(getApplicationContext(), QuarterChecker.REQUEST_CODE,
                 intent, PendingIntent.FLAG_UPDATE_CURRENT);
         long firstMillis = System.currentTimeMillis();

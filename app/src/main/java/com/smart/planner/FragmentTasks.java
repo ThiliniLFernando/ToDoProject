@@ -128,7 +128,7 @@ public class FragmentTasks extends Fragment implements Filterable, DatePickerDia
         sectionAdapter.addSection(tomorrowTaskSec);
         sectionAdapter.addSection(upcomingTaskSec);
 
-        retrieveTaskData(null);
+        retrieveTaskData("all");
         recycleViewLayoutManager = new LinearLayoutManager(getActivity());
         taskRecycleView.setHasFixedSize(true);
 
@@ -139,6 +139,7 @@ public class FragmentTasks extends Fragment implements Filterable, DatePickerDia
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), EventEditor.class));
+                floatMenu.collapse();
             }
         });
 
@@ -147,6 +148,7 @@ public class FragmentTasks extends Fragment implements Filterable, DatePickerDia
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), TaskEditor.class);
                 startActivity(i);
+                floatMenu.collapse();
             }
         });
 
@@ -170,8 +172,9 @@ public class FragmentTasks extends Fragment implements Filterable, DatePickerDia
     }
 
     private void createTabByList() {
+        tabLayout.removeAllTabs();
+        tabLayout.addTab(tabLayout.newTab().setText("All"));
         if(Main.CURRENT_USER_KEY != null){
-            tabLayout.removeAllTabs();
             firestore.collection("Users").document(Main.CURRENT_USER_KEY).collection("Lists").addSnapshotListener(MetadataChanges.INCLUDE,new EventListener<QuerySnapshot>() {
                 @Override
                 public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
@@ -180,6 +183,7 @@ public class FragmentTasks extends Fragment implements Filterable, DatePickerDia
                     }
 
                     assert queryDocumentSnapshots != null;
+
                     for (DocumentChange d : queryDocumentSnapshots.getDocumentChanges()){
                         List li = d.getDocument().toObject(List.class);
                         tabLayout.addTab(tabLayout.newTab().setText(li.getListName()));
@@ -191,7 +195,7 @@ public class FragmentTasks extends Fragment implements Filterable, DatePickerDia
 
     private synchronized void retrieveTaskData(final String list) {
         if (Main.CURRENT_USER_KEY != null) {
-            if (list != null && !list.trim().equalsIgnoreCase("inbox")){
+            if (list != null && !list.trim().equalsIgnoreCase("all")){
                 firestoreQuery = firestore.collection("Users").document(Main.CURRENT_USER_KEY).collection("Tasks").orderBy("dueDate").whereEqualTo("listName",list);
             }else {
                 firestoreQuery = firestore.collection("Users").document(Main.CURRENT_USER_KEY).collection("Tasks").orderBy("dueDate");

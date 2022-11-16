@@ -314,7 +314,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/title/baseline_title_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/arrow_forward_ios/baseline_arrow_forward_ios_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -325,7 +325,7 @@
                         <option name="values">
                           <map>
                             <entry key="autoMirrored" value="true" />
-                            <entry key="outputName" value="ic_t_shape" />
+                            <entry key="outputName" value="ic_baseline_arrow_forward_ios_24" />
                             <entry key="sourceFile" value="C:\Users\Thilini\Desktop\check.svg" />
                           </map>
                         </option>

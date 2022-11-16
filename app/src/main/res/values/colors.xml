@@ -28,7 +28,7 @@
     <!-- Charts Colors -->
     <color name="pieChart_completed">#768fff</color>
     <color name="pieChart_undone">#ffb6c1</color>
-    <color name="weeklyBarChartColor">#00cdac</color>
+    <color name="weeklyBarChartColor">#768fff</color>
 
     <!-- Add Location Reminder Bottom Sheet  -->
     <color name="locationReminder_addListItem">#1E88E5</color>
