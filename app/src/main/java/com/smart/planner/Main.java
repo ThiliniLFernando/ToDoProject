@@ -106,6 +106,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // for commiting
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initComponents();
