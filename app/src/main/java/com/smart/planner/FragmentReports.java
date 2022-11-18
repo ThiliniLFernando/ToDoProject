@@ -264,6 +264,7 @@ public class FragmentReports extends Fragment {
         }
         BarDataSet barDataSet = new BarDataSet(barEntries, "Task Completion Percentage");
         BarData barData = new BarData(barDataSet);
+        // error occured ContextCompact null error
         barDataSet.setColor(ContextCompat.getColor(getContext(), R.color.weeklyBarChartColor));
         barData.setBarWidth(2);
 

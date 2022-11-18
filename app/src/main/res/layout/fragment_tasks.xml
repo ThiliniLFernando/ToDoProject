@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundDefaultColor"
     android:orientation="vertical">
 
     <com.google.android.material.tabs.TabLayout
@@ -18,7 +17,6 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/backgroundDefaultColor"
         android:orientation="vertical">
 
         <ViewSwitcher
@@ -79,9 +77,9 @@
             android:layout_gravity="end|bottom"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="50dp"
-            app:fab_addButtonColorNormal="@color/floatingActionButtonColor"
+            app:fab_addButtonPlusIconColor="?attr/fabForegroundColor"
+            app:fab_addButtonColorNormal="?attr/fabBackgroundColor"
             app:fab_addButtonSize="normal"
-            app:fab_labelStyle="@drawable/submenu_fab_title_background"
             app:fab_labelsPosition="left">
 
             <com.getbase.floatingactionbutton.FloatingActionButton
@@ -89,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTintMode="screen"
-                app:fab_colorNormal="@color/floatingActionButtonColor"
+                app:fab_colorNormal="?attr/fabBackgroundColor"
                 app:fab_icon="@drawable/ic_fab_event_color_icon"
                 app:fab_size="mini"
                 app:fab_title="@string/fab_submenu_event_text" />
@@ -99,7 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTintMode="screen"
-                app:fab_colorNormal="@color/floatingActionButtonColor"
+                app:fab_colorNormal="?attr/fabBackgroundColor"
                 app:fab_icon="@drawable/ic_fab_reminder_color_icon"
                 app:fab_size="mini"
                 app:fab_title="@string/fab_submenu_reminder_text" />

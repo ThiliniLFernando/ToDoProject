@@ -26,9 +26,10 @@
         android:layout_gravity="bottom|end"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="60dp"
-        android:backgroundTint="@color/floatingActionButtonColor"
+        android:backgroundTint="?attr/fabBackgroundColor"
         app:fab_size="normal"
-        app:fab_colorNormal="@color/floatingActionButtonColor"
+        app:fab_addButtonPlusIconColor="?attr/fabForegroundColor"
+        app:fab_colorNormal="?attr/fabBackgroundColor"
         app:srcCompat="@drawable/ic_fab_add_new_list" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

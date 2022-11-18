@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="fabBackgroundColor" format="color"/>
+    <attr name="fabForegroundColor" format="color"/>
+    <attr name="navHeaderFrColor" format="color"/>
+    <attr name="navHeaderBtnColor" format="color"/>
+    <attr name="dialogHeaderColor" format="color"/>
+    <attr name="dialogHeaderBgColor" format="color"/>
+    <attr name="reportCompleteTask" format="color"/>
+    <attr name="reportPendingTask" format="color"/>
+    <attr name="textBoxBorder" format="color"/>
+    <attr name="navHeaderBg" format="reference"/>
+</resources>

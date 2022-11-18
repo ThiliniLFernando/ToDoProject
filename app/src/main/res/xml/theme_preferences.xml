@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="theme_summer"
+        android:title="Summer"
+        android:layout="@layout/fragment_theme"/>
+
+
+    <Preference
+        android:key="theme_winter"
+        android:title="Winter" />
+
+    <Preference
+        android:key="theme_sunshine"
+        android:title="SunShine"/>
+
+    <Preference
+        android:key="theme_sakura"
+        android:title="Sakura"/>
+
+</PreferenceScreen>

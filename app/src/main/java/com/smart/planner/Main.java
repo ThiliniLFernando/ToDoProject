@@ -1,6 +1,7 @@
 package com.smart.planner;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -75,7 +76,9 @@ import java.util.Random;
 
 public class Main extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static final int DEFAULT = 1, SUMMER = 2, AUTUMN = 3, SAKURA = 4, SUNSHINE = 5,WINTER=6;
     public static String CURRENT_USER_KEY;
+
     public final static String PROFILE_PATH = "/profile/current_profile.jpg";
     private static String profileSignature;
 
@@ -106,7 +109,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // for commiting
+        Main.applyTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initComponents();
@@ -131,6 +134,58 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         }
 
 
+    }
+
+    public static void applyTheme(Activity a) {
+        int theme = PreferenceManager.getDefaultSharedPreferences(a.getApplicationContext())
+                .getInt("theme",-1);
+        if(theme != -1) {
+            boolean isDarkTheme = PreferenceManager.getDefaultSharedPreferences(a.getApplicationContext())
+                    .getBoolean("isDarkTheme",false);
+            if(isDarkTheme) {
+                switch (theme) {
+                    case 1:
+                        a.setTheme(R.style.AppTheme);
+                        break;
+                    case 2:
+                        a.setTheme(R.style.SummerTheme);
+                        break;
+                    case 3:
+                        a.setTheme(R.style.AutumnTheme);
+                        break;
+                    case 4:
+                        a.setTheme(R.style.SakuraTheme);
+                        break;
+                    case 5:
+                        a.setTheme(R.style.SunshineTheme);
+                        break;
+                    case 6:
+                        a.setTheme(R.style.WinterTheme);
+                        break;
+                }
+            }else{
+                switch (theme) {
+                    case 1:
+                        a.setTheme(R.style.AppDarkTheme);
+                        break;
+                    case 2:
+                        a.setTheme(R.style.SummerDarkTheme);
+                        break;
+                    case 3:
+                        a.setTheme(R.style.AutumnDarkTheme);
+                        break;
+                    case 4:
+                        a.setTheme(R.style.SakuraDarkTheme);
+                        break;
+                    case 5:
+                        a.setTheme(R.style.SunshineDarkTheme);
+                        break;
+                    case 6:
+                        a.setTheme(R.style.WinterDarkTheme);
+                        break;
+                }
+            }
+        }
     }
 
     private void setProfileImage() {

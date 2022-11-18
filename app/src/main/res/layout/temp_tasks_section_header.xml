@@ -5,7 +5,6 @@
     android:id="@+id/task_section_header_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
     android:paddingTop="5dp"
     android:paddingBottom="5dp"
     tools:visibility="visible">
@@ -13,12 +12,11 @@
     <TextView
         android:id="@+id/section_header"
         android:layout_width="wrap_content"
-        android:layout_height="31dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:padding="5dp"
         android:paddingBottom="10dp"
         android:textAlignment="viewStart"
-        android:textColor="@color/black"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         android:textStyle="bold"

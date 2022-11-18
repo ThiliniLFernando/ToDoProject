@@ -129,6 +129,45 @@
     <color name="gray">#a4a4a4</color>
     <color name="logoForgroundColor">#00FDF5</color>
 
+    <color name="summer">#cce75b</color>
+    <color name="summer_dark">#21A321</color>
+
+    <color name="autumn">#f9b92a</color>
+    <color name="autumn_dark">#c18900</color>
+
+    <color name="sakura">#f397b9</color>
+    <color name="sakura_dark">#bf6789</color>
+
+    <color name="sunshine">#f9e202</color>
+    <color name="sunshine_dark">#c2b000</color>
+
+    <color name="winter">#2e4246</color>
+    <color name="winter_dark">#071b1f</color>
+
+    <color name="summerPrimaryColor">#cce75b</color>
+    <color name="summerPrimaryLightColor">#ffff8d</color>
+    <color name="summerPrimaryDarkColor">#98b527</color>
+    <color name="summerPrimaryTextColor">#000000</color>
+
+    <color name="autumnPrimaryColor">#fab92a</color>
+    <color name="autumnPrimaryLightColor">#ffeb60</color>
+    <color name="autumnPrimaryDarkColor">#c28900</color>
+    <color name="autumnPrimaryTextColor">#000000</color>
+
+    <color name="sakuraPrimaryColor">#bf6789</color>
+    <color name="sakuraPrimaryLightColor">#f397b9</color>
+    <color name="sakuraPrimaryDarkColor">#8d395c</color>
+    <color name="sakuraPrimaryTextColor">#000000</color>
+
+    <color name="sunshinePrimaryColor">#fbe305</color>
+    <color name="sunshinePrimaryLightColor">#ffff56</color>
+    <color name="sunshinePrimaryDarkColor">#c4b100</color>
+    <color name="sunshinePrimaryTextColor">#000000</color>
+
+    <color name="winterPrimaryColor">#2e4246</color>
+    <color name="winterPrimaryLightColor">#586d71</color>
+    <color name="winterPrimaryDarkColor">#071b1f</color>
+    <color name="winterPrimaryTextColor">#000000</color>
 
     <color name="done_button_color">#21A321</color>
     <color name="cancelled_button_color">#BC164E</color>

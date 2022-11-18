@@ -119,7 +119,6 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="2962ff" />
                                       <entry key="foregroundAssetType" value="TEXT" />
                                     </map>
                                   </option>
@@ -219,17 +218,48 @@
                                 <PersistentState>
                                   <option name="children">
                                     <map>
+                                      <entry key="backgroundImage">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="imagePath" value="C:\Users\USER\Desktop\sunshine.jpg" />
+                                                <entry key="scalingPercent" value="155" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                      <entry key="foregroundImage">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="scalingPercent" value="0" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                       <entry key="foregroundText">
                                         <value>
                                           <PersistentState>
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
+                                                <entry key="text" value="" />
                                               </map>
                                             </option>
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                    </map>
+                                  </option>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="backgroundAssetType" value="IMAGE" />
+                                      <entry key="generateLegacyIcon" value="false" />
+                                      <entry key="outputName" value="theme_sunshine_banner" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -291,6 +321,11 @@
                             </entry>
                           </map>
                         </option>
+                        <option name="values">
+                          <map>
+                            <entry key="outputIconType" value="TV_BANNER" />
+                          </map>
+                        </option>
                       </PersistentState>
                     </value>
                   </entry>
@@ -314,7 +349,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/arrow_forward_ios/baseline_arrow_forward_ios_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/brightness_3/baseline_brightness_3_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -325,8 +360,8 @@
                         <option name="values">
                           <map>
                             <entry key="autoMirrored" value="true" />
-                            <entry key="outputName" value="ic_baseline_arrow_forward_ios_24" />
-                            <entry key="sourceFile" value="C:\Users\Thilini\Desktop\check.svg" />
+                            <entry key="outputName" value="ic_night_mode" />
+                            <entry key="sourceFile" value="C:\Users\USER\Desktop\_theme_sunshine_1.psd" />
                           </map>
                         </option>
                       </PersistentState>

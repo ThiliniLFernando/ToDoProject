@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundDefaultColor"
     android:orientation="vertical"
     tools:context=".EventEditor"
     android:id="@+id/eventEditor_parent">
@@ -52,8 +51,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="57dp"
                 android:backgroundTintMode="screen"
-                android:tint="@color/color_picker_default"
-                app:srcCompat="@drawable/ic_paint_dot" />
+                app:srcCompat="@drawable/ic_paint_dot"
+                app:tint="@color/color_picker_default" />
         </LinearLayout>
 
         <View

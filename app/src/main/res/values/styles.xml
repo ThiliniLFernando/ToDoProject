@@ -7,6 +7,241 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
         <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+        <item name="fabBackgroundColor">@color/colorPrimary</item>
+        <item name="fabForegroundColor">@color/white</item>
+        <item name="navHeaderFrColor">@color/black</item>
+        <item name="navHeaderBg">@drawable/_theme_default</item>
+        <item name="navHeaderBtnColor">@color/colorAccent</item>
+        <item name="dialogHeaderColor">@color/white</item>
+        <item name="dialogHeaderBgColor">@color/colorPrimaryDark</item>
+        <item name="textBoxBorder">@color/colorAccent</item>
+        <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
+        <item name="reportPendingTask">@color/colorAccent</item>
+    </style>
+
+    <style name="AppDarkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+<!--        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>-->
+<!--        -->
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+        <item name="fabBackgroundColor">@color/colorPrimary</item>
+        <item name="fabForegroundColor">@color/white</item>
+        <item name="navHeaderFrColor">@color/black</item>
+        <item name="navHeaderBg">@drawable/_theme_default</item>
+        <item name="navHeaderBtnColor">@color/colorAccent</item>
+        <item name="dialogHeaderColor">@color/white</item>
+        <item name="dialogHeaderBgColor">@color/colorPrimaryDark</item>
+        <item name="textBoxBorder">@color/colorAccent</item>
+        <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
+        <item name="reportPendingTask">@color/colorAccent</item>
+    </style>
+
+    <style name="SummerTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="reportPendingTask">@color/summerPrimaryDarkColor</item>
+        <item name="colorPrimary">@color/summerPrimaryColor</item>
+        <item name="colorPrimaryDark">@color/summerPrimaryDarkColor</item>
+        <item name="colorAccent">@color/summerPrimaryLightColor</item>
+        <item name="android:textColor">@color/summerPrimaryTextColor</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+        <item name="fabBackgroundColor">@color/summerPrimaryColor</item>
+        <item name="fabForegroundColor">@color/summerPrimaryTextColor</item>
+        <item name="navHeaderBg">@drawable/_theme_summer</item>
+        <item name="navHeaderFrColor">@color/black</item>
+        <item name="navHeaderBtnColor">@color/summerPrimaryDarkColor</item>
+        <item name="dialogHeaderColor">@color/black</item>
+        <item name="dialogHeaderBgColor">@color/summerPrimaryDarkColor</item>
+        <item name="textBoxBorder">@color/summerPrimaryLightColor</item>
+        <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
+    </style>
+
+    <style name="SummerDarkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="reportPendingTask">@color/summerPrimaryDarkColor</item>
+        <item name="colorPrimary">@color/summerPrimaryColor</item>
+        <item name="colorPrimaryDark">@color/summerPrimaryDarkColor</item>
+        <item name="colorAccent">@color/summerPrimaryLightColor</item>
+        <item name="android:textColor">@color/white</item>
+<!--        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>-->
+<!--       -->
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+        <item name="fabBackgroundColor">@color/summerPrimaryColor</item>
+        <item name="fabForegroundColor">@color/summerPrimaryTextColor</item>
+        <item name="navHeaderBg">@drawable/_theme_summer</item>
+        <item name="navHeaderFrColor">@color/black</item>
+        <item name="navHeaderBtnColor">@color/summerPrimaryDarkColor</item>
+        <item name="dialogHeaderColor">@color/black</item>
+        <item name="dialogHeaderBgColor">@color/summerPrimaryDarkColor</item>
+        <item name="textBoxBorder">@color/summerPrimaryLightColor</item>
+        <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
+    </style>
+
+    <style name="AutumnTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/autumnPrimaryColor</item>
+        <item name="colorPrimaryDark">@color/autumnPrimaryDarkColor</item>
+        <item name="colorAccent">@color/autumnPrimaryLightColor</item>
+        <item name="android:textColor">@color/autumnPrimaryTextColor</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+        <item name="fabBackgroundColor">@color/autumnPrimaryColor</item>
+        <item name="fabForegroundColor">@color/autumnPrimaryTextColor</item>
+        <item name="navHeaderBg">@drawable/_theme_autumn</item>
+        <item name="navHeaderFrColor">@color/black</item>
+        <item name="navHeaderBtnColor">@color/autumnPrimaryDarkColor</item>
+        <item name="dialogHeaderColor">@color/black</item>
+        <item name="dialogHeaderBgColor">@color/autumnPrimaryLightColor</item>
+        <item name="textBoxBorder">@color/autumnPrimaryLightColor</item>
+        <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
+        <item name="reportPendingTask">@color/autumnPrimaryColor</item>
+    </style>
+
+    <style name="AutumnDarkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/autumnPrimaryColor</item>
+        <item name="colorPrimaryDark">@color/autumnPrimaryDarkColor</item>
+        <item name="colorAccent">@color/autumnPrimaryLightColor</item>
+        <item name="android:textColor">@color/white</item>
+<!--        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>-->
+<!--       -->
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+        <item name="fabBackgroundColor">@color/autumnPrimaryColor</item>
+        <item name="fabForegroundColor">@color/autumnPrimaryTextColor</item>
+        <item name="navHeaderBg">@drawable/_theme_autumn</item>
+        <item name="navHeaderFrColor">@color/black</item>
+        <item name="navHeaderBtnColor">@color/autumnPrimaryDarkColor</item>
+        <item name="dialogHeaderColor">@color/black</item>
+        <item name="dialogHeaderBgColor">@color/autumnPrimaryLightColor</item>
+        <item name="textBoxBorder">@color/autumnPrimaryLightColor</item>
+        <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
+        <item name="reportPendingTask">@color/autumnPrimaryColor</item>
+    </style>
+
+    <style name="SunshineTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/sunshinePrimaryColor</item>
+        <item name="colorPrimaryDark">@color/sunshinePrimaryDarkColor</item>
+        <item name="colorAccent">@color/sunshinePrimaryLightColor</item>
+        <item name="android:textColor">@color/sunshinePrimaryTextColor</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+        <item name="fabBackgroundColor">@color/sunshinePrimaryColor</item>
+        <item name="fabForegroundColor">@color/sunshinePrimaryTextColor</item>
+        <item name="navHeaderBg">@drawable/_theme_sunshine</item>
+        <item name="navHeaderFrColor">@color/black</item>
+        <item name="navHeaderBtnColor">@color/sunshinePrimaryDarkColor</item>
+        <item name="dialogHeaderColor">@color/black</item>
+        <item name="dialogHeaderBgColor">@color/sunshinePrimaryDarkColor</item>
+        <item name="textBoxBorder">@color/sunshinePrimaryLightColor</item>
+        <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
+        <item name="reportPendingTask">@color/sunshinePrimaryLightColor</item>
+    </style>
+
+    <style name="SunshineDarkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/sunshinePrimaryColor</item>
+        <item name="colorPrimaryDark">@color/sunshinePrimaryDarkColor</item>
+        <item name="colorAccent">@color/sunshinePrimaryLightColor</item>
+        <item name="android:textColor">@color/white</item>
+<!--        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>-->
+<!--        -->
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+        <item name="fabBackgroundColor">@color/sunshinePrimaryColor</item>
+        <item name="fabForegroundColor">@color/sunshinePrimaryTextColor</item>
+        <item name="navHeaderBg">@drawable/_theme_sunshine</item>
+        <item name="navHeaderFrColor">@color/black</item>
+        <item name="navHeaderBtnColor">@color/sunshinePrimaryDarkColor</item>
+        <item name="dialogHeaderColor">@color/black</item>
+        <item name="dialogHeaderBgColor">@color/sunshinePrimaryDarkColor</item>
+        <item name="textBoxBorder">@color/sunshinePrimaryLightColor</item>
+        <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
+        <item name="reportPendingTask">@color/sunshinePrimaryLightColor</item>
+    </style>
+
+    <style name="SakuraTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/sakuraPrimaryColor</item>
+        <item name="colorPrimaryDark">@color/sakuraPrimaryDarkColor</item>
+        <item name="colorAccent">@color/sakuraPrimaryLightColor</item>
+        <item name="android:textColor">@color/sakuraPrimaryTextColor</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+        <item name="fabBackgroundColor">@color/sakuraPrimaryColor</item>
+        <item name="fabForegroundColor">@color/sakuraPrimaryTextColor</item>
+        <item name="navHeaderBg">@drawable/_theme_sakura</item>
+        <item name="navHeaderFrColor">@color/black</item>
+        <item name="navHeaderBtnColor">@color/sakuraPrimaryLightColor</item>
+        <item name="dialogHeaderColor">@color/black</item>
+        <item name="dialogHeaderBgColor">@color/sakuraPrimaryColor</item>
+        <item name="textBoxBorder">@color/sakuraPrimaryLightColor</item>
+        <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
+        <item name="reportPendingTask">@color/sakuraPrimaryDarkColor</item>
+    </style>
+
+    <style name="SakuraDarkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/sakuraPrimaryColor</item>
+        <item name="colorPrimaryDark">@color/sakuraPrimaryDarkColor</item>
+        <item name="colorAccent">@color/sakuraPrimaryLightColor</item>
+        <item name="android:textColor">@color/white</item>
+<!--        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>-->
+<!--        -->
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+        <item name="fabBackgroundColor">@color/sakuraPrimaryColor</item>
+        <item name="fabForegroundColor">@color/sakuraPrimaryTextColor</item>
+        <item name="navHeaderBg">@drawable/_theme_sakura</item>
+        <item name="navHeaderFrColor">@color/black</item>
+        <item name="navHeaderBtnColor">@color/sakuraPrimaryLightColor</item>
+        <item name="dialogHeaderColor">@color/black</item>
+        <item name="dialogHeaderBgColor">@color/sakuraPrimaryColor</item>
+        <item name="textBoxBorder">@color/sakuraPrimaryLightColor</item>
+        <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
+        <item name="reportPendingTask">@color/sakuraPrimaryDarkColor</item>
+    </style>
+
+    <style name="WinterTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/winterPrimaryColor</item>
+        <item name="colorPrimaryDark">@color/winterPrimaryDarkColor</item>
+        <item name="colorAccent">@color/winterPrimaryLightColor</item>
+        <item name="android:textColor">@color/winterPrimaryTextColor</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+        <item name="fabBackgroundColor">@color/winterPrimaryColor</item>
+        <item name="fabForegroundColor">@color/white</item>
+        <item name="navHeaderBg">@drawable/_theme_dark</item>
+        <item name="navHeaderFrColor">@color/white</item>
+        <item name="navHeaderBtnColor">@color/winterPrimaryLightColor</item>
+        <item name="dialogHeaderColor">@color/white</item>
+        <item name="dialogHeaderBgColor">@color/winterPrimaryLightColor</item>
+        <item name="textBoxBorder">@color/winterPrimaryLightColor</item>
+        <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
+        <item name="reportPendingTask">@color/winterPrimaryLightColor</item>
+    </style>
+
+    <style name="WinterDarkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/winterPrimaryColor</item>
+        <item name="colorPrimaryDark">@color/winterPrimaryDarkColor</item>
+        <item name="colorAccent">@color/winterPrimaryLightColor</item>
+        <item name="android:textColor">@color/white</item>
+<!--        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>-->
+<!--       -->
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+        <item name="fabBackgroundColor">@color/winterPrimaryColor</item>
+        <item name="fabForegroundColor">@color/white</item>
+        <item name="navHeaderBg">@drawable/_theme_dark</item>
+        <item name="navHeaderFrColor">@color/white</item>
+        <item name="navHeaderBtnColor">@color/winterPrimaryLightColor</item>
+        <item name="dialogHeaderColor">@color/white</item>
+        <item name="dialogHeaderBgColor">@color/winterPrimaryLightColor</item>
+        <item name="textBoxBorder">@color/winterPrimaryLightColor</item>
+        <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
+        <item name="reportPendingTask">@color/winterPrimaryLightColor</item>
     </style>
 
     <style name="CustomActivityAnimation" parent="android:Animation.Activity">
@@ -20,8 +255,6 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
-
 
     <style
         name="SettingPreference_ActionBarTheme" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">

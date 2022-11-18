@@ -1,41 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory
-        android:title="ACCOUNT">
-    <Preference
-        android:key="reset_profile"
-        android:icon="@drawable/pref_change_profile"
-        android:title="Change Picture"/>
-    <EditTextPreference
-        android:key="reset_name"
-        android:icon="@drawable/pref_change_name"
-        android:title="Change Name"
-        android:dialogTitle="Please enter your name"/>
-    <Preference
-        android:key="reset_pw"
-        android:icon="@drawable/pref_change_pw"
-        android:title="Reset Password"/>
-    <Preference
-        android:key="delete_account"
-        android:icon="@drawable/pref_delete_account"
-        android:title="Delete Account"/>
-    <Preference
-        android:key="sign_out"
-        android:icon="@drawable/pref_sign_out"
-        android:title="Sign Out"/>
+        android:title="ACCOUNT"
+        app:allowDividerAbove="true">
+        <Preference
+            android:icon="@drawable/pref_change_profile"
+            android:key="reset_profile"
+            android:title="Change Picture" />
+        <EditTextPreference
+            android:dialogTitle="Please enter your name"
+            android:icon="@drawable/pref_change_name"
+            android:key="reset_name"
+            android:title="Change Name" />
+        <Preference
+            android:icon="@drawable/pref_change_pw"
+            android:key="reset_pw"
+            android:title="Reset Password" />
+        <Preference
+            android:icon="@drawable/pref_delete_account"
+            android:key="delete_account"
+            android:title="Delete Account" />
+        <Preference
+            android:icon="@drawable/pref_sign_out"
+            android:key="sign_out"
+            android:title="Sign Out" />
     </PreferenceCategory>
-    <PreferenceCategory
-        android:title="PREFERENCES">
+
+    <PreferenceCategory android:title="PREFERENCES">
 
         <Preference
+            android:fragment="com.smart.planner.SettingsActivity$ThemeFragment"
+            android:icon="@drawable/ic_baseline_brush_24"
             android:key="theme"
-            android:icon="@drawable/pref_sign_out"
-            android:title="Theme"/>
+            android:title="Theme" />
+
+        <SwitchPreference
+            android:icon="@drawable/ic_night_mode"
+            android:key="night_mode"
+            android:title="Night Mode" />
 
         <Preference
+            android:icon="@drawable/ic_baseline_brush_24"
             android:key="notification"
-            android:icon="@drawable/pref_sign_out"
-            android:title="Notification Sound"/>
+            android:title="Notification Sound" />
 
     </PreferenceCategory>
+
 </PreferenceScreen>

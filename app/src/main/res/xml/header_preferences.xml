@@ -6,8 +6,6 @@
         app:key="messages_header"
         app:title="@string/messages_header" />
 
-<!--    //-->
-
     <Preference
         app:fragment="com.smart.planner.SettingsActivity$SyncFragment"
         app:icon="@drawable/sync"

@@ -1,12 +1,8 @@
 package com.smart.planner;
 
 import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,7 +26,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.gson.Gson;
 import com.smart.planner.Classes.NetworkUtils;
-import com.smart.planner.JobService.QuarterChecker;
 import com.smart.planner.POJOs.User;
 
 public class SignIn extends AppCompatActivity {
@@ -49,6 +44,7 @@ public class SignIn extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Main.applyTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
         initComponents();
@@ -152,6 +148,8 @@ public class SignIn extends AppCompatActivity {
                                             editor.putString("current_user_object", gson.toJson(user));
                                             editor.putString("current_user_KEY", SignIn.CURRENT_USER_KEY);
                                             editor.putBoolean("first_time_app_open", true);
+                                            editor.putInt("theme", Main.DEFAULT);
+                                            editor.putBoolean("isDarkTheme",false);
                                             editor.apply();
 
 

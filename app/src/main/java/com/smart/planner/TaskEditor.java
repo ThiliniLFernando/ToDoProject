@@ -81,6 +81,7 @@ public class TaskEditor extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        Main.applyTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor_task);
         retrieveListData();

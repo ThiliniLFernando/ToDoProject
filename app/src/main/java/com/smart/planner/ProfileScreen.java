@@ -12,6 +12,11 @@ import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Environment;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContract;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.preference.PreferenceManager;
 
 import android.provider.MediaStore;
@@ -73,6 +78,7 @@ public class ProfileScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Main.applyTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_screen);
         initComponents();
@@ -106,7 +112,7 @@ public class ProfileScreen extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setProfileImage();
 
-        // setProfileImage();
+        setProfileImage();
 
         imageOption.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,7 +162,7 @@ public class ProfileScreen extends AppCompatActivity {
         Intent callGalleryRequestIntent = new Intent();
         callGalleryRequestIntent.setType("image/*");
         callGalleryRequestIntent.setAction(Intent.ACTION_GET_CONTENT);
-        this.startActivityForResult(Intent.createChooser(callGalleryRequestIntent, "Select Picture"), RequestCodes.GALLERY_REQUEST_CODE);
+        openGalleryInt.launch(Intent.createChooser(callGalleryRequestIntent, "Select Picture"));
     }
 
     private void openCamera() {
@@ -169,20 +175,23 @@ public class ProfileScreen extends AppCompatActivity {
             Toast.makeText(this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
         }
         Uri photoURI = FileProvider.getUriForFile(
-                this,
-                this.getApplicationContext().getPackageName() + ".provider",
+                getApplicationContext(),
+                BuildConfig.APPLICATION_ID + ".provider",
                 photoFile);
         callCameraAppIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-        startActivityForResult(
-                callCameraAppIntent,
-                RequestCodes.CAMERA_REQUEST_CODE);
+        openCameraInt.launch(callCameraAppIntent);
     }
 
     private void setProfileImage() {
-        Glide.with(this)
-                .load(profileReference)
-                .apply(new RequestOptions().signature(new ObjectKey(Main.getProfileSignature())))
-                .into(thisProfileImage);
+        profileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Glide.with(ProfileScreen.this)
+                        .load(profileReference)
+                        .apply(new RequestOptions().signature(new ObjectKey(Main.getProfileSignature())))
+                        .into(thisProfileImage);
+            }
+        });
     }
 
     @Override
@@ -193,6 +202,7 @@ public class ProfileScreen extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode,permissions,grantResults);
         switch (requestCode) {
             case RequestCodes.CAMERA_PERMISSION_REQUEST_CODE: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -205,27 +215,41 @@ public class ProfileScreen extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RequestCodes.CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
-            rotateImage(setReducedImageSize());
-            if (tempImageFileLocation != null) {
-                File image = new File(tempImageFileLocation);
-                tempPhotoUri = Uri.fromFile(image);
+    ActivityResultLauncher<Intent> openCameraInt = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if(result.getResultCode()== RESULT_OK){
+                        rotateImage(setReducedImageSize());
+                        if (tempImageFileLocation != null) {
+                            File image = new File(tempImageFileLocation);
+                            tempPhotoUri = Uri.fromFile(image);
+                        }
+                    }
+                }
             }
-        } else if (requestCode == RequestCodes.GALLERY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Uri targetUri = data.getData();
-            Bitmap bitmap;
-            try {
-                bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(targetUri));
-                thisProfileImage.setImageBitmap(bitmap);
-                tempPhotoUri = targetUri;
-            } catch (FileNotFoundException e) {
-                Toast.makeText(this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+    );
+
+    ActivityResultLauncher<Intent> openGalleryInt = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if(result.getResultCode()== RESULT_OK){
+                        Uri targetUri = result.getData().getData();
+                        Bitmap bitmap;
+                        try {
+                            bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(targetUri));
+                            thisProfileImage.setImageBitmap(bitmap);
+                            tempPhotoUri = targetUri;
+                        } catch (FileNotFoundException e) {
+                            Toast.makeText(getApplicationContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
             }
-        }
-    }
+    );
 
     private File createImageFile() throws Exception {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
