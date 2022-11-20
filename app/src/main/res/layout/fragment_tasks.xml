@@ -41,15 +41,15 @@
 
                 <ImageView
                     android:id="@+id/orrange_tick"
-                    android:layout_width="104dp"
-                    android:layout_height="115dp"
-                    android:layout_marginTop="244dp"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="100dp"
                     android:contentDescription="@string/image_not_available"
                     app:layout_constraintEnd_toEndOf="@+id/textView5"
                     app:layout_constraintHorizontal_bias="0.384"
                     app:layout_constraintStart_toStartOf="@+id/textView5"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/searching_cock" />
+                    app:srcCompat="?attr/taskEmptyLogo" />
 
                 <TextView
                     android:id="@+id/textView5"

@@ -233,6 +233,7 @@ public class SettingsActivity extends AppCompatActivity implements
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object o) {
                     boolean onOff = ((SwitchPreference) preference).isChecked();
+                    onOff = !onOff;
                     SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext().getApplicationContext());
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putBoolean("isDarkTheme",onOff);

@@ -9,8 +9,7 @@
         android:id="@+id/task_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="10dp"
-        android:background="@color/list_background_default_gradEnd">
+        android:paddingTop="10dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_recycleView"

@@ -142,7 +142,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         if(theme != -1) {
             boolean isDarkTheme = PreferenceManager.getDefaultSharedPreferences(a.getApplicationContext())
                     .getBoolean("isDarkTheme",false);
-            if(isDarkTheme) {
+            if(!isDarkTheme) {
                 switch (theme) {
                     case 1:
                         a.setTheme(R.style.AppTheme);

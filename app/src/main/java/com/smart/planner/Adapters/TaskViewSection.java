@@ -4,6 +4,7 @@ import android.animation.ValueAnimator;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.GradientDrawable;
@@ -50,6 +51,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.ColorUtils;
+import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionParameters;
@@ -63,6 +65,7 @@ public class TaskViewSection extends StatelessSection {
     String headerTitle;
     RecyclerView mTaskRecyclerView;
     SectionedRecyclerViewAdapter sectionAdapter;
+    private SharedPreferences preferences;
 
     private static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy MMM dd");
     private static SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
@@ -78,6 +81,7 @@ public class TaskViewSection extends StatelessSection {
         itemListClone = new ArrayList<>(itemList);
         headerTitle = title;
         sectionAdapter = sa;
+        preferences = PreferenceManager.getDefaultSharedPreferences(mTaskFragment.getContext().getApplicationContext());
     }
 
     @Override
@@ -135,7 +139,11 @@ public class TaskViewSection extends StatelessSection {
             itemHolder.done.setVisibility(View.GONE);
             itemHolder.cancelled.setVisibility(View.GONE);
             itemHolder.eventStartTime.setCompoundDrawables(null,null,null,null);
-            itemHolder.eventTitle.setTextColor(Color.BLACK);
+            if (!preferences.getBoolean("isDarkTheme",false)) {
+                itemHolder.eventTitle.setTextColor(Color.BLACK);
+            }else {
+                itemHolder.eventTitle.setTextColor(Color.WHITE);
+            }
             final Task task = (Task) this.itemList.get(position);
             itemHolder.eventStartTime.setText(timeFormat.format(task.getDueDate()));
             itemHolder.taskDate.setText(dateFormat.format(task.getDueDate()));
@@ -201,9 +209,15 @@ public class TaskViewSection extends StatelessSection {
             itemHolder.eventDate.setText(dateFormat.format(event.getDueDate()));
             itemHolder.eventStartTime.setText(timeFormat.format(event.getStartTime()));
             itemHolder.eventEndTime.setText(timeFormat.format(event.getEndTime()));
-            itemHolder.eventIcon.setBackgroundColor(lightColor);
-            itemHolder.eventTitle.setTextColor(darkColor);
-            itemHolder.eventIcon.setColorFilter(darkColor);
+            if (!preferences.getBoolean("isDarkTheme",false)) {
+                itemHolder.eventTitle.setTextColor(darkColor);
+                itemHolder.eventIcon.setColorFilter(darkColor);
+                itemHolder.eventIcon.setBackgroundColor(lightColor);
+            }else {
+                itemHolder.eventTitle.setTextColor(lightColor);
+                itemHolder.eventIcon.setColorFilter(lightColor);
+                itemHolder.eventIcon.setBackgroundColor(darkColor);
+            }
             itemHolder.eventNote.setText(event.getNote());
             itemHolder.inviteeCount.setText(event.getInvitees().size()+" Invitees");
             if (event.getLocation() != null && !event.getLocation().trim().equals("")){

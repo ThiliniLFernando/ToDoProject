@@ -1,7 +1,6 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -16,11 +15,10 @@
         <item name="dialogHeaderBgColor">@color/colorPrimaryDark</item>
         <item name="textBoxBorder">@color/colorAccent</item>
         <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
-        <item name="reportPendingTask">@color/colorAccent</item>
+        <item name="taskEmptyLogo">@drawable/empty_logo_light</item>
     </style>
 
     <style name="AppDarkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -37,10 +35,10 @@
         <item name="textBoxBorder">@color/colorAccent</item>
         <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
         <item name="reportPendingTask">@color/colorAccent</item>
+        <item name="taskEmptyLogo">@drawable/empty_logo_dark</item>
     </style>
 
     <style name="SummerTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="reportPendingTask">@color/summerPrimaryDarkColor</item>
         <item name="colorPrimary">@color/summerPrimaryColor</item>
         <item name="colorPrimaryDark">@color/summerPrimaryDarkColor</item>
@@ -57,10 +55,10 @@
         <item name="dialogHeaderBgColor">@color/summerPrimaryDarkColor</item>
         <item name="textBoxBorder">@color/summerPrimaryLightColor</item>
         <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
+        <item name="taskEmptyLogo">@drawable/empty_logo_light</item>
     </style>
 
     <style name="SummerDarkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="reportPendingTask">@color/summerPrimaryDarkColor</item>
         <item name="colorPrimary">@color/summerPrimaryColor</item>
         <item name="colorPrimaryDark">@color/summerPrimaryDarkColor</item>
@@ -78,10 +76,10 @@
         <item name="dialogHeaderBgColor">@color/summerPrimaryDarkColor</item>
         <item name="textBoxBorder">@color/summerPrimaryLightColor</item>
         <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
+        <item name="taskEmptyLogo">@drawable/empty_logo_dark</item>
     </style>
 
     <style name="AutumnTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/autumnPrimaryColor</item>
         <item name="colorPrimaryDark">@color/autumnPrimaryDarkColor</item>
         <item name="colorAccent">@color/autumnPrimaryLightColor</item>
@@ -98,10 +96,10 @@
         <item name="textBoxBorder">@color/autumnPrimaryLightColor</item>
         <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
         <item name="reportPendingTask">@color/autumnPrimaryColor</item>
+        <item name="taskEmptyLogo">@drawable/empty_logo_light</item>
     </style>
 
     <style name="AutumnDarkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/autumnPrimaryColor</item>
         <item name="colorPrimaryDark">@color/autumnPrimaryDarkColor</item>
         <item name="colorAccent">@color/autumnPrimaryLightColor</item>
@@ -119,10 +117,10 @@
         <item name="textBoxBorder">@color/autumnPrimaryLightColor</item>
         <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
         <item name="reportPendingTask">@color/autumnPrimaryColor</item>
+        <item name="taskEmptyLogo">@drawable/empty_logo_dark</item>
     </style>
 
     <style name="SunshineTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/sunshinePrimaryColor</item>
         <item name="colorPrimaryDark">@color/sunshinePrimaryDarkColor</item>
         <item name="colorAccent">@color/sunshinePrimaryLightColor</item>
@@ -139,10 +137,10 @@
         <item name="textBoxBorder">@color/sunshinePrimaryLightColor</item>
         <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
         <item name="reportPendingTask">@color/sunshinePrimaryLightColor</item>
+        <item name="taskEmptyLogo">@drawable/empty_logo_light</item>
     </style>
 
     <style name="SunshineDarkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/sunshinePrimaryColor</item>
         <item name="colorPrimaryDark">@color/sunshinePrimaryDarkColor</item>
         <item name="colorAccent">@color/sunshinePrimaryLightColor</item>
@@ -160,10 +158,10 @@
         <item name="textBoxBorder">@color/sunshinePrimaryLightColor</item>
         <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
         <item name="reportPendingTask">@color/sunshinePrimaryLightColor</item>
+        <item name="taskEmptyLogo">@drawable/empty_logo_dark</item>
     </style>
 
     <style name="SakuraTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/sakuraPrimaryColor</item>
         <item name="colorPrimaryDark">@color/sakuraPrimaryDarkColor</item>
         <item name="colorAccent">@color/sakuraPrimaryLightColor</item>
@@ -180,10 +178,10 @@
         <item name="textBoxBorder">@color/sakuraPrimaryLightColor</item>
         <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
         <item name="reportPendingTask">@color/sakuraPrimaryDarkColor</item>
+        <item name="taskEmptyLogo">@drawable/empty_logo_light</item>
     </style>
 
     <style name="SakuraDarkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/sakuraPrimaryColor</item>
         <item name="colorPrimaryDark">@color/sakuraPrimaryDarkColor</item>
         <item name="colorAccent">@color/sakuraPrimaryLightColor</item>
@@ -201,10 +199,10 @@
         <item name="textBoxBorder">@color/sakuraPrimaryLightColor</item>
         <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
         <item name="reportPendingTask">@color/sakuraPrimaryDarkColor</item>
+        <item name="taskEmptyLogo">@drawable/empty_logo_dark</item>
     </style>
 
     <style name="WinterTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/winterPrimaryColor</item>
         <item name="colorPrimaryDark">@color/winterPrimaryDarkColor</item>
         <item name="colorAccent">@color/winterPrimaryLightColor</item>
@@ -221,10 +219,10 @@
         <item name="textBoxBorder">@color/winterPrimaryLightColor</item>
         <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
         <item name="reportPendingTask">@color/winterPrimaryLightColor</item>
+        <item name="taskEmptyLogo">@drawable/empty_logo_light</item>
     </style>
 
     <style name="WinterDarkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/winterPrimaryColor</item>
         <item name="colorPrimaryDark">@color/winterPrimaryDarkColor</item>
         <item name="colorAccent">@color/winterPrimaryLightColor</item>
@@ -242,6 +240,7 @@
         <item name="textBoxBorder">@color/winterPrimaryLightColor</item>
         <item name="reportCompleteTask">@color/color_picker_mistyRose</item>
         <item name="reportPendingTask">@color/winterPrimaryLightColor</item>
+        <item name="taskEmptyLogo">@drawable/empty_logo_dark</item>
     </style>
 
     <style name="CustomActivityAnimation" parent="android:Animation.Activity">

@@ -10,4 +10,6 @@
     <attr name="reportPendingTask" format="color"/>
     <attr name="textBoxBorder" format="color"/>
     <attr name="navHeaderBg" format="reference"/>
+    <attr name="taskEmptyLogo" format="reference"/>
+
 </resources>
